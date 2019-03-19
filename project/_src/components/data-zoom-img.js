@@ -3,6 +3,10 @@ var DataZoomImg={
 
     display:function($btn){
 
+        if(window.wysiwyg){
+            wysiwyg.contextMenu.hide();
+        }
+
         //injecte le layer au besoin
         let $zoomLayer=$("#data-zoom-layer");
         if(!$zoomLayer.length){
