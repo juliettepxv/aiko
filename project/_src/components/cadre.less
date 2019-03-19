@@ -1,5 +1,46 @@
 .cadre{
-  border-radius: 4px;
-  padding: var(--spacing-small);
-  border:1px solid @color-grey-light;
+
+  @radius:16px;
+  position: relative;
+
+
+  .img-wrap{
+    //border-radius: @radius;
+    position: relative;
+    z-index: 10;
+    //overflow: hidden;
+    img{
+      border-radius: @radius;
+      overflow: hidden;
+      box-shadow: 2px 5px 50px 0px rgba(0, 0, 0, 0.8);
+    }
+  }
+
+
+  &.multiple{
+    margin-top: var(--spacing-medium);
+    &:before,&:after{
+      content:"";
+      border-radius: @radius;
+      position: absolute;
+      //background-color: lighten(@color-dark1,10%);
+      width: 100%;
+      height: 100%;
+      transform-origin: top center;
+      top: 0;
+      left: 0;
+
+    }
+    &:after{
+      transform: scale(0.90) translateY(-60px);
+      z-index: 3;
+      background-image: linear-gradient(to bottom, @color-dark2 , @color-dark3);
+    }
+    &:before{
+      transform: scale(0.95) translateY(-30px);
+      z-index: 4;
+      background-image: linear-gradient(to bottom, @color-dark3 , @color-dark4);
+    }
+
+  }
 }
