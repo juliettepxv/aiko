@@ -27,7 +27,7 @@ foreach ($iconsSizes as $size){
 "display": "standalone",
 "orientation": "portrait",
 "background_color": "#222222",
-"theme_color": "#",
+"theme_color": "#BBBBBB",
 "icons": <?=json_encode($icons,JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES)?>
 
 
