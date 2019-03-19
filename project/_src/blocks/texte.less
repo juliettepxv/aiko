@@ -25,9 +25,9 @@
         z-index: -1;
       }
       &:hover{
-        color: @color-fluo-complementaire;
+        color: @color-white;
         &:before{
-          background-color: @color-fluo;
+          background-color:  @color-grey-light;
           left: -3px;
           bottom: 0;
           height: 100%;
@@ -46,20 +46,20 @@
         margin-bottom: 0.5em;
       }
       li::before{
-        background-color: @color-fluo;
-        color: @color-fluo-complementaire;
+        background-color: @color-grey-light;
+        color: @color-white;
         display: inline-flex;
         align-items: center;
         justify-content: center;
         margin-right: 1em;
-        border-radius: 100%;
+
       }
     }
     ul{
       li::before{
         content: '';
-        width: 10px;
-        height: 10px;
+        width: 12px;
+        height: 4px;
         flex-shrink: 0;
         flex-grow: 0;
       }

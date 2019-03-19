@@ -11,41 +11,58 @@ $invert=$vv->getData("invert")?"invert":"";
 ?>
 <div <?= $vv->wysiwyg()->openConfigOnCreate()->attr() ?> class="block block-img-text <?=$invert?>">
     <div class="container">
+        <div class="wrap-bg">
     <div class="row">
 
-        <div class="col-6">
-            <? if ($img && $img->isImage()): ?>
-            <div class="block-img py-medium">
-                <div class="img-wrap" data-zoom-img="<?= $img->image()->sizeMax(1600, 1600)->jpg()->href() ?>">
-                    <?= $img->image()
-                        ->width(800)
-                        ->jpg()
-                        ->htmlTag()
-                        ->addClass("img-responsive")
-                    ?>
-                </div>
-            </div>
-            <? elseif (\Classiq\Wysiwyg\Wysiwyg::$enabled): ?>
-                <div id="cq-style">
+            <div class="col-sm-12 col-md-6">
+                <? if ($img && $img->isImage()): ?>
+                    <div class="block-img py-medium">
+                        <div class="img-wrap" data-zoom-img="<?= $img->image()->sizeMax(1600, 1600)->jpg()->href() ?>">
+                            <?= $img->image()
+                                ->width(800)
+                                ->jpg()
+                                ->htmlTag()
+                                ->addClass("img-responsive")
+                            ?>
+                        </div>
+                    </div>
+                <? elseif (\Classiq\Wysiwyg\Wysiwyg::$enabled): ?>
+                    <div id="cq-style">
                         <div text-center class="cq-box cq-th-danger">
                             Il faut choisir une image
                         </div>
+                    </div>
+                <? endif ?>
+            </div>
+
+            <div class="col-sm-12 col-md-6">
+                <div class="block-texte py-medium">
+                    <?= $vv->wysiwyg()
+                        ->field("title_lang")
+                        ->string(\Pov\Utils\StringUtils::FORMAT_HTML)
+                        ->setPlaceholder("Saisissez votre texte")
+                        //->setMediumButtons(["bold", "italic","select-record","removeFormat"])
+                        ->htmlTag("h3")
+                        ->addClass("title")
+                    ?>
+
+                    <?= $vv->wysiwyg()
+                        ->field("texte_lang")
+                        ->string(\Pov\Utils\StringUtils::FORMAT_HTML)
+                        ->setPlaceholder("Saisissez votre texte")
+                        //->setMediumButtons(["bold", "italic","select-record","removeFormat"])
+                        ->htmlTag("div")
+                        ->addClass("txt")
+                    ?>
+
+                    <?=pov()->svg->use("startup-arrow-right")?>
                 </div>
-            <? endif ?>
+
+            </div>
+
         </div>
 
-        <div class="col-6">
-            <div class="block-texte py-medium">
-                <?= $vv->wysiwyg()
-                    ->field("texte_lang")
-                    ->string(\Pov\Utils\StringUtils::FORMAT_HTML)
-                    ->setPlaceholder("Saisissez votre texte")
-                    //->setMediumButtons(["bold", "italic","select-record","removeFormat"])
-                    ->htmlTag("div")
-                    ->addClass("txt")
-                ?>
-            </div>
-        </div>
+
     </div>
     </div>
 </div>

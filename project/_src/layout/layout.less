@@ -1,9 +1,9 @@
 
 #root{
-  --nav-menu-width:300px;
+  --nav-menu-width:150px;
   --nav-bar-height:50px;
   @media(min-width: @screen-md){
-    --nav-menu-width:400px;
+    --nav-menu-width:200px;
     --nav-bar-height:80px;
   }
   //à partir de là on est plus en burger
@@ -11,13 +11,14 @@
     //--menu-width:400px; plus d'intérêt
     --nav-bar-height:100px;
   }
+
 }
 
 html{
   overflow-y: scroll;
 }
 #root{
-  padding-top: var(--nav-bar-height,80px);
+  //padding-top: var(--nav-bar-height,80px);
 
   >#main{
     display: flex;

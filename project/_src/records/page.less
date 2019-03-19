@@ -1,0 +1,87 @@
+.page{
+  >svg {
+    position: absolute;
+    right: 0;
+    width: 70%;
+    height: auto;
+    @media (min-width: @screen-sm) {
+      width: 80%;
+
+    }
+
+    @media (min-width: @screen-md) {
+      width: auto;
+      height: auto;
+    }
+  }
+
+
+  .page-header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    flex-wrap: wrap;
+    padding-top: 100px;
+    @media (min-width: @screen-xl) {
+      padding-top: 0px;
+      height: 800px;
+      flex-wrap: nowrap;
+    }
+
+    .block-img {
+      img {
+        max-width: 180px;
+        @media (min-width: @screen-xs) {
+          max-width: 300px;
+        }
+        @media (min-width: @screen-md) {
+          max-width: 400px;
+        }
+
+      }
+
+    }
+
+    .rub {
+
+
+      display: inline-flex;
+      margin: 0 var(--spacing-small) 0 0;
+
+      border: 4px solid @color-white;
+      border: 4px solid var(--page-color);
+      color: var(--page-color);
+      .pxy-medium;
+
+      @media (min-width: @screen-xs) {
+        margin: 0 var(--spacing-big) 0 0;
+      }
+
+      @media (min-width: @screen-xl) {
+        margin: 0 var(--spacing-medium) 0 0;
+      }
+
+    }
+
+    .wrap-text {
+      display: flex;
+      flex-direction: column;
+      order: 2;
+      margin-bottom: var(--spacing-big);
+
+      .title{
+        color: var(--page-color);
+      }
+
+      @media (min-width: @screen-xl) {
+        order: inherit;
+        max-width: 400px;
+        margin-right: var(--spacing-big);
+        margin-bottom: 0;
+      }
+    }
+
+  }
+}

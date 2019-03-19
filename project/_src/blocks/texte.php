@@ -11,8 +11,7 @@
                 ->field("texte_lang")
                 ->string(\Pov\Utils\StringUtils::FORMAT_HTML)
                 ->setPlaceholder("Saisissez votre texte")
-                ->setMediumButtons([
-                    "h1","h2",
+                ->setMediumButtons(["h2",
                     "bold","italic","underline","strikethrough",
                     "orderedlist","unorderedlist",
                     "anchor","select-record",

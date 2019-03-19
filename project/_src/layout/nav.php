@@ -2,37 +2,46 @@
 /** @var \Classiq\Models\Nav $menu */
 $menu=\Classiq\Models\Nav::getByName("menu",true);
 ?>
-<nav id="nav" class="shadow-medium">
+<nav id="nav" class="my-medium">
     <div id="nav-mask" data-nav-menu-toggle></div>
 
-    <div id="nav-bar" >
+    <div class="container">
+        <div id="nav-bar" >
 
-        <a class="logo bgimg-cover"
-           style="background-image: url('<?=the()->fileSystem->filesystemToHttp("project/logo.png")?>')"
-           href="<?=cq()->homePage()->href()?>"></a>
+            <a class="wrap-logo">
+                <span class="logo bgimg-contain"
+                   style="background-image: url('<?=the()->fileSystem->filesystemToHttp("project/logo.png")?>')"
+                   href="<?=cq()->homePage()->href()?>"></span>
 
-        <button data-nav-menu-toggle class="burger d-flex d-xl-none unstyled">
-            <?=pov()->svg->use("startup-burger")?>
-            <?=pov()->svg->use("startup-close")?>
-        </button>
+            </a>
 
-    </div>
+            <button data-nav-menu-toggle class="burger d-flex d-xl-none unstyled">
+                <?=pov()->svg->use("startup-burger")?>
+                <?=pov()->svg->use("startup-close")?>
+            </button>
 
-    <div id="nav-content">
+        </div>
 
-        <?=$menu->wysiwyg()->field("items")
-            ->listJson(["layout/item"])
-            ->horizontal()
-            ->contextMenuSize(SIZE_SMALL)
-            ->onlyRecords("page")
-            ->htmlTag("ul")
-            ->addClass("menu")
-        ?>
+        <div id="nav-content">
 
+            <?=$menu->wysiwyg()->field("items")
+                ->listJson(["layout/item"])
+                ->horizontal()
+                ->contextMenuSize(SIZE_SMALL)
+                ->onlyRecords("page")
+                ->htmlTag("ul")
+                ->addClass("menu")
+            ?>
+
+            <?/*
         <ul class="right">
             <?=$view->render("./menu-languages")?>
 
         </ul>
+    */?>
 
+
+        </div>
     </div>
+
 </nav>

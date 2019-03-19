@@ -1,5 +1,43 @@
-.block-titre{
-  h1,h2,h3{
-    //à vous de jouer
+.block-titre {
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .my-big;
+
+    &.encart {
+      .tt-titre {
+        .encart-titre;
+      }
+
+      svg {
+        display: none;
+      }
+    }
+
+    &.ligne {
+      .tt-titre {
+        .link;
+        color: @color-white;
+      }
+
+      svg {
+
+        width: 135px;
+        height: 15px;
+        color:@color-dark3;
+        @media(min-width: @screen-md){
+          width: 180px;
+          height: 20px;
+        }
+        @media(min-width: @screen-lg){
+          width: 270px;
+          height: 30px;
+        }
+      }
+    }
+
   }
 }
+
+

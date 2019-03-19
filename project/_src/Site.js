@@ -68,7 +68,7 @@ export default class Site{
      */
     static navActive(){
         $("[data-href-uid]").removeClass("active");
-        $("[data-href-uid='"+PovHistory.currentPageInfo.uid+"']").addClass("active");
+        $("[data-href-uid='"+PovHistory.currentPageInfo.rubriqueUid+"']").addClass("active");
     }
 
     /**

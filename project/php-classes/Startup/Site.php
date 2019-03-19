@@ -3,6 +3,7 @@
 namespace Startup;
 
 
+use Classiq\Models\Page;
 use Pov\System\AbstractSingleton;
 
 /**
@@ -40,10 +41,47 @@ class Site extends AbstractSingleton
 
     /**
      * Renvoie la home page
-     * @return \Classiq\Models\Page|null
+     * @return Page|null
      * @throws \Pov\PovException
      */
     public function homePage(){
         return cq()->homePage();
+    }
+
+    /**
+     * Renvoie la rubrique correspondante à la page donnée
+     * @param Page $vv
+     * @return Page
+     */
+    public function getRubrique($vv)
+    {
+        if($this->isRubrique($vv)){
+            return $vv;
+        }
+        /** @var Page $rub */
+        $rub=$vv->getValueAsRecord("vars.rubrique");
+        if($rub && $this->isRubrique($rub)){
+            return $rub;
+        }
+        return $this->homePage();
+    }
+
+    /**
+     * Pour savoir si la page donnée est une rubrique
+     * @param Page $vv
+     * @return bool
+     */
+    public function isRubrique($vv){
+        return $vv->page_type==="rubrique";
+    }
+
+    /**
+     * Renvoie la couleur associée à la page
+     * @param Page $vv
+     * @return string
+     */
+    public function getPageColor($vv){
+        $rub=$this->getRubrique($vv);
+        return $rub->getValue("vars.couleur");
     }
 }
