@@ -33,39 +33,55 @@ if($imgs){
 ?>
 <div <?=$vv->wysiwyg()->openConfigOnCreate()->attr()?> class="block block-img py-medium">
     <div class="container">
-        <div class="row cadre <?=$imgs?"multiple":""?>">
+        <div class="row <?=$vv->getData("invert")?"invert":""?>">
 
-            <?if($style==="two-images"):?>
 
-                <div class="col-6 img-wrap" data-zoom-img="<?=$image1->image()->sizeMax(1600,1600)->jpg()->href()?>"  >
-                    <?=$image1->image()->sizeCover(600,900)
-                        ->jpg()
-                        ->htmlTag()
-                        ->addClass("img-responsive")?>
+
+            <div class="col-12 col-lg-9 is-images">
+                <div class="row cadre <?=$imgs?"multiple":""?>">
+                    <?if($style==="two-images"):?>
+                        <div class="col-6 img-wrap" data-zoom-img="<?=$image1->image()->sizeMax(1600,1600)->jpg()->href()?>"  >
+                            <?=$image1->image()->sizeCover(600,600)
+                                ->jpg()
+                                ->htmlTag()
+                                ->addClass("img-responsive")?>
+                        </div>
+                        <div class="col-6 img-wrap" data-zoom-img="<?=$image2->image()->sizeMax(1600,1600)->jpg()->href()?>"  >
+                            <?=$image2->image()->sizeCover(600,600)
+                                ->jpg()
+                                ->htmlTag()
+                                ->addClass("img-responsive")?>
+                        </div>
+                    <?else:?>
+                        <?if($image1):?>
+                            <div class="col-12 img-wrap" data-zoom-img="<?=$image1->image()->sizeMax(1600,1600)->jpg()->href()?>"  >
+                                <?=$image1->image()->width(1200)
+                                    ->jpg()
+                                    ->htmlTag()
+                                    ->addClass("img-responsive")?>
+                            </div>
+                        <?endif;?>
+                    <?endif?>
                 </div>
+            </div>
 
-                <div class="col-6 img-wrap" data-zoom-img="<?=$image2->image()->sizeMax(1600,1600)->jpg()->href()?>"  >
-                    <?=$image2->image()->sizeCover(600,900)
-                        ->jpg()
-                        ->htmlTag()
-                        ->addClass("img-responsive")?>
+            <?if($vv->getData("texte")):?>
+                <div class="col-12 col-lg-3 is-text">
+                    <?= $vv->wysiwyg()
+                        ->field("texte_lang")
+                        ->string(\Pov\Utils\StringUtils::FORMAT_HTML)
+                        ->setPlaceholder("Saisissez votre texte")
+                        //->setMediumButtons(["bold", "italic","select-record","removeFormat"])
+                        ->htmlTag("div")
+                        ->addClass("txt")
+                    ?>
                 </div>
-
-            <?else:?>
-
-                <?if($image1):?>
-                    <div class="col-12 img-wrap" data-zoom-img="<?=$image1->image()->sizeMax(1600,1600)->jpg()->href()?>"  >
-                        <?=$image1->image()->width(1200)
-                            ->jpg()
-                            ->htmlTag()
-                            ->addClass("img-responsive")?>
-                    </div>
-                <?endif;?>
-
             <?endif?>
 
 
         </div>
+
+
     </div>
 
     <?//balises invisibles pour les autres images de zoom?>

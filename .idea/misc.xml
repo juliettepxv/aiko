@@ -3,4 +3,10 @@
   <component name="JavaScriptSettings">
     <option name="languageLevel" value="ES6" />
   </component>
+  <component name="ProjectPlainTextFileTypeManager">
+    <file url="file://$PROJECT_DIR$/dist/app-wysiwyg.css" />
+    <file url="file://$PROJECT_DIR$/dist/app-wysiwyg.js" />
+    <file url="file://$PROJECT_DIR$/dist/app.css" />
+    <file url="file://$PROJECT_DIR$/dist/app.js" />
+  </component>
 </project>

@@ -25,11 +25,20 @@
     ])
 ?>
 
-<label>Activer le zoom?</label>
+<label>Zone de texte?</label>
 <?=$vv->wysiwyg()
-    ->field("zoom")
+    ->field("texte")
     ->bool()
     ->onSavedRefreshListItem($vv)
-    ->checkbox("Activer le zoom")
+    ->checkbox("Activer")
 ?>
+<?if($vv->getData("texte")):?>
+    <?=$vv->wysiwyg()
+        ->field("invert")
+        ->bool()
+        ->onSavedRefreshListItem($vv)
+        ->checkbox("inverser la mise en page")
+    ?>
+<?endif;?>
+
 
