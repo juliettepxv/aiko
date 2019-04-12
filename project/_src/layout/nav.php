@@ -2,7 +2,7 @@
 /** @var \Classiq\Models\Nav $menu */
 $menu=\Classiq\Models\Nav::getByName("menu",true);
 ?>
-<nav id="nav" class="my-medium">
+<nav id="nav">
     <div id="nav-mask" data-nav-menu-toggle></div>
 
     <div class="container">
