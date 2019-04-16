@@ -10,7 +10,7 @@ use Classiq\Models\Page;
         <?=$vv->wysiwyg()->field("page_type")->string()->select(["rubrique","page"])?>
     </fieldset>
     <fieldset>
-        <?if($vv->page_type === "rubrique"):?>
+        <?if(site()->isRubrique($vv)):?>
             <label>Couleur</label>
             <?=$vv->wysiwyg()->field("vars.couleur")->string()->input("color")?>
             <?=$vv->wysiwyg()->field("vars.couleur")->string()->input()?>

@@ -51,9 +51,10 @@ class Site extends AbstractSingleton
     /**
      * Renvoie la rubrique correspondante à la page donnée
      * @param Page $vv
+     * @param bool $strict si false et qu'il n'y apas de rubrique renverra rien, sinon ce sera la home page
      * @return Page
      */
-    public function getRubrique($vv)
+    public function getRubrique($vv,$strict=true)
     {
         if($this->isRubrique($vv)){
             return $vv;
@@ -62,6 +63,9 @@ class Site extends AbstractSingleton
         $rub=$vv->getValueAsRecord("vars.rubrique");
         if($rub && $this->isRubrique($rub)){
             return $rub;
+        }
+        if($strict){
+            return null;
         }
         return $this->homePage();
     }
