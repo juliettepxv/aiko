@@ -2,8 +2,7 @@
 /** @var Page $vv */
 
 use Classiq\Models\Page;
-
-the()->htmlLayout()->pageInfo->rubriqueUid = site()->getRubrique($vv)->uid();
+the()->htmlLayout()->pageInfo->rubriqueUid = site()->getRubrique($vv,false)->uid();
 the()->htmlLayout()->pageInfo->color = site()->getPageColor($vv);
 $view->inside("layout/layout", $vv);
 ?>

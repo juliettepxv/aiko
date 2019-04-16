@@ -31,7 +31,8 @@ class Site extends AbstractSingleton
         "blocks/texte",
         "blocks/titre",
         "blocks/img",
-        "blocks/img-text",
+        "blocks/preview-page",
+        //"blocks/img-text",
         "blocks/block-photos/photos",
         "blocks/block-logos/block-logos",
         "blocks/iframe",
@@ -85,7 +86,7 @@ class Site extends AbstractSingleton
      * @return string
      */
     public function getPageColor($vv){
-        $rub=$this->getRubrique($vv);
+        $rub=$this->getRubrique($vv,false);
         return $rub->getValue("vars.couleur");
     }
 }
