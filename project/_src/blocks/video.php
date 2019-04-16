@@ -6,18 +6,28 @@ $src="";
 if($file){
     $src=$file->httpPath();
 }
+/** @var bool $posterMode */
+$posterMode=$vv->getData("posterMode");
+
+
+if($posterMode){
+    $containerCss="poster";
+    $containerRatioCss="";
+    $vdoAttr="autoplay='autoplay' moted='muted' loop='loop' ";
+}else{
+    $containerCss="container";
+    $containerRatioCss="embed-responsive embed-responsive-16by9";
+    $vdoAttr="controls ";
+}
+
 
 ?>
 <? if (cq()->wysiwyg() || $src): ?>
-<div <?= $vv->wysiwyg()->openConfigOnCreate()->attr() ?> class="block block-video py-medium">
-<div class="container">
+<div <?= $vv->wysiwyg()->openConfigOnCreate()->attr() ?> class="block block-video">
+<div class="<?=$containerCss?>">
     <? if ($src): ?>
-        <div class="cadre">
-            <div class="embed-responsive embed-responsive-16by9" data-zoom-img="<?=$src?>" data-zoom-type="video">
-                <video controls src="<?=$src?>"></video>
-                <?=pov()->svg->use("startup-zoom")?>
-            </div>
-
+        <div class="<?=$containerRatioCss?>">
+            <video <?=$vdoAttr?> src="<?=$src?>"></video>
         </div>
     <? else: ?>
         <div id="cq-style">

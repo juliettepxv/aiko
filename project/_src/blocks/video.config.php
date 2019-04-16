@@ -15,3 +15,11 @@
 ?>
 <?endforeach;?>
 
+<label>Affichage</label>
+<?=$vv->wysiwyg()
+    ->field("posterMode")
+    ->bool()
+    ->onSavedRefreshListItem($vv)
+    ->checkbox("Mode poster")
+?>
+
