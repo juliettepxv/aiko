@@ -5,7 +5,8 @@
 $vv->wysiwyg()->openConfigOnCreate();
 /** @var \Classiq\Models\Page $page */
 $page=$vv->targetUid(true);
-$label=$vv->getData("label_lang",$page->name_lang);
+
+$label=$vv->getData("label_lang",$page->getValue("shortname_".the()->project->langCode));
 ?>
 <?if($page):?>
     <li <?=$vv->wysiwyg()->attr()?>>
