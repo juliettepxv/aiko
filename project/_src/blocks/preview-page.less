@@ -9,6 +9,10 @@
     color: var(--page-color,#fff);
   }
 
+  &.block-preview-rub{
+    margin-top: 100px;
+  }
+
 .wrap-bg{
   .gradient-dark;
 
@@ -18,6 +22,16 @@
     img{
       .radius-img;
       .shadow-big;
+    }
+  }
+
+  .wrap-rub{
+    .rub{
+
+      position: absolute;
+      top: -70px;
+      margin-right: var(--spacing-big);
+      margin-left:  var(--spacing-small);
     }
   }
 
@@ -44,6 +58,12 @@
 }
   &.invert{
     .row{
+
+
+      .rub{
+        margin-left: var(--spacing-big);
+        margin-right:  var(--spacing-small);
+      }
 
       .block-texte{
         margin-left: var(--spacing-big);

@@ -34,7 +34,7 @@ if($page){
 ?>
 <?if($page || cq()->wysiwyg()):?>
 <a href="<?=$href?>" <?= $vv->wysiwyg()->openConfigOnCreate()->attr() ?>
-   class="block block-preview-page <?=$invert?>"
+   class="block block-preview-page <?=$invert?> <?if(site()->isRubrique($page)):?>block-preview-rub<?endif;?>"
     style="<?=$cssColor?>">
 
     <div class="container">
@@ -85,9 +85,9 @@ if($page){
 
                         <?if(site()->isRubrique($page)):?>
                             <div class="wrap-rub">
-                                <h3 class="rub">
+                                <h1 class="rub">
                                     <?=$page->getValue("shortname_".the()->project->langCode)?>
-                                </h3>
+                                </h1>
                             </div>
                         <?endif;?>
 
