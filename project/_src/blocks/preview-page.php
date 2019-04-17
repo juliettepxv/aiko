@@ -7,6 +7,7 @@
 $page = $vv->targetUid(true);
 $invert=$vv->getData("invert")?"invert":"";
 $href="#";
+$cssColor="";
 if($page){
     $href=$page->href();
     /** @var \Classiq\Models\Filerecord $img */
@@ -22,11 +23,19 @@ if($page){
             ->htmlTag()
             ->addClass("img-responsive");
     }
+    //couleur
+    if(site()->isRubrique($page)){
+        $cssColor="--page-color:".site()->getPageColor($page);
+    }
+
 
 }
+
 ?>
 <?if($page || cq()->wysiwyg()):?>
-<a href="<?=$href?>" <?= $vv->wysiwyg()->openConfigOnCreate()->attr() ?> class="block block-preview-page <?=$invert?>">
+<a href="<?=$href?>" <?= $vv->wysiwyg()->openConfigOnCreate()->attr() ?>
+   class="block block-preview-page <?=$invert?>"
+    style="<?=$cssColor?>">
 
     <div class="container">
         <?if(!$page):?>
@@ -67,30 +76,33 @@ if($page){
 
                     </div>
 
+
+
                     <div class="col-sm-12 col-md-6">
+
 
                         <?//textes----------------?>
 
+                        <?if(site()->isRubrique($page)):?>
+                            <div class="wrap-rub">
+                                <h3 class="rub">
+                                    <?=$page->getValue("shortname_".the()->project->langCode)?>
+                                </h3>
+                            </div>
+                        <?endif;?>
+
+
                         <div class="block-texte py-medium">
-                            <?= $page->wysiwyg()
-                                ->field("name_".the()->project->langCode)
-                                ->string(\Pov\Utils\StringUtils::FORMAT_NO_HTML_SINGLE_LINE)
-                                ->setPlaceholder("Titre de la page...")
-                                //->setMediumButtons(["bold", "italic","select-record","removeFormat"])
-                                ->htmlTag("h3")
-                                ->addClass("title")
-                            ?>
 
-                            <?= $page->wysiwyg()
-                                ->field("intro_".the()->project->langCode)
-                                ->string(\Pov\Utils\StringUtils::FORMAT_HTML)
-                                ->setPlaceholder("Texte d'introduction....")
-                                //->setMediumButtons(["bold", "italic","select-record","removeFormat"])
-                                ->htmlTag("div")
-                                ->addClass("txt")
-                            ?>
+                            <h3 class="title">
+                                <?=$page->getValue("name_".the()->project->langCode)?>
+                            </h3>
 
-                            <?=pov()->svg->use("startup-arrow-right")?>
+                            <div class="txt">
+                                <?=$page->getValue("vars.texte_".the()->project->langCode)?>
+                            </div>
+
+                            <?=pov()->svg->use("startup-arrow-right")->addClass("fleche")?>
                         </div>
 
                     </div>
