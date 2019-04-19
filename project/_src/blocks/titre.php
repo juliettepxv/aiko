@@ -6,7 +6,9 @@
  */
 
 $styleCss=$vv->getData("style","encart");
-
+if($styleCss==="ligne"){
+    $styleCss.=" container-ligne";
+}
 ?>
 <div <?=$vv->wysiwyg()->attr()?> class="block block-titre">
     <div class="container  <?= $styleCss?>">
@@ -18,7 +20,7 @@ $styleCss=$vv->getData("style","encart");
             ->string(\Pov\Utils\StringUtils::FORMAT_NO_HTML_SINGLE_LINE)
             ->setPlaceholder("Saisissez votre titre")
             ->htmlTag("h2")
-            ->addClass("tt-titre")
+            ->addClass("tt-titre center")
         ?>
 
         <?=pov()->svg->use("startup-tiret-h")?>
