@@ -8,6 +8,7 @@ $page = $vv->targetUid(true);
 $invert=$vv->getData("invert")?"invert":"";
 $href="#";
 $cssColor="";
+$cssIsRub="";
 if($page){
     $href=$page->href();
     /** @var \Classiq\Models\Filerecord $img */
@@ -27,7 +28,7 @@ if($page){
     if(site()->isRubrique($page)){
         $cssColor="--page-color:".site()->getPageColor($page);
     }
-
+    $cssIsRub="is-rub";
 
 }
 
@@ -37,7 +38,7 @@ if($page){
    class="block block-preview-page <?=$invert?> <?if(site()->isRubrique($page)):?>block-preview-rub<?endif;?>"
     style="<?=$cssColor?>">
 
-    <div class="container">
+    <div class="container <?=$cssIsRub?>">
         <?if(!$page):?>
 
             <div id="cq-style">
@@ -54,14 +55,23 @@ if($page){
             */
             ?>
 
-            <div class="wrap-bg">
+            <div class="wrap-bg ">
+
+                <?if(site()->isRubrique($page)):?>
+                    <div class="wrap-rub">
+                        <h1 class="rub">
+                            <?=$page->getValue("shortname_".the()->project->langCode)?>
+                        </h1>
+                    </div>
+                <?endif;?>
+
                 <div class="row">
 
                     <div class="col-sm-12 col-md-6">
 
                         <?//image----------------?>
                         <? if ($imgTag): ?>
-                            <div class="block-img py-medium">
+                            <div class="block-img ">
                                 <div class="img-wrap">
                                     <?=$imgTag?>
                                 </div>
@@ -72,27 +82,18 @@ if($page){
                             </div>
                         <? endif ?>
 
-
-
                     </div>
 
 
 
                     <div class="col-sm-12 col-md-6">
 
-
                         <?//textes----------------?>
 
-                        <?if(site()->isRubrique($page)):?>
-                            <div class="wrap-rub">
-                                <h1 class="rub">
-                                    <?=$page->getValue("shortname_".the()->project->langCode)?>
-                                </h1>
-                            </div>
-                        <?endif;?>
 
 
-                        <div class="block-texte py-medium">
+
+                        <div class="block-texte">
 
                             <h3 class="title">
                                 <?=$page->getValue("name_".the()->project->langCode)?>
@@ -103,6 +104,7 @@ if($page){
                             </div>
 
                             <?=pov()->svg->use("startup-arrow-right")->addClass("fleche")?>
+
                         </div>
 
                     </div>

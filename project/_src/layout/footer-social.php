@@ -1,4 +1,4 @@
-<div class="container container-ligne footer-social">
+<div class="container container-ligne footer-social my-big">
     <?=pov()->svg->use("startup-tiret-h")?>
 
     <div class="center">
