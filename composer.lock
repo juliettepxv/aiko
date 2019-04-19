@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/davidmars/Classiq.git",
-                "reference": "a07b2b902156d6c9969a918e9d5521f2d17684db"
+                "reference": "c6d9479c1b012c2b8c0a4dde624e4e6ee92a4342"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/davidmars/Classiq/zipball/a07b2b902156d6c9969a918e9d5521f2d17684db",
-                "reference": "a07b2b902156d6c9969a918e9d5521f2d17684db",
+                "url": "https://api.github.com/repos/davidmars/Classiq/zipball/c6d9479c1b012c2b8c0a4dde624e4e6ee92a4342",
+                "reference": "c6d9479c1b012c2b8c0a4dde624e4e6ee92a4342",
                 "shasum": ""
             },
             "require": {
@@ -41,7 +41,7 @@
                 "source": "https://github.com/davidmars/Classiq/tree/master",
                 "issues": "https://github.com/davidmars/Classiq/issues"
             },
-            "time": "2019-03-06T13:27:19+00:00"
+            "time": "2019-04-15T05:23:03+00:00"
         },
         {
             "name": "davidmars/localization",
@@ -127,12 +127,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/davidmars/pov-2018.git",
-                "reference": "6d93982c0fcb3cf97f8e2de89f1ce795bb892e42"
+                "reference": "25e694aac41eac01c20a1c90fed0eac807998119"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/davidmars/pov-2018/zipball/6d93982c0fcb3cf97f8e2de89f1ce795bb892e42",
-                "reference": "6d93982c0fcb3cf97f8e2de89f1ce795bb892e42",
+                "url": "https://api.github.com/repos/davidmars/pov-2018/zipball/25e694aac41eac01c20a1c90fed0eac807998119",
+                "reference": "25e694aac41eac01c20a1c90fed0eac807998119",
                 "shasum": ""
             },
             "require": {
@@ -152,7 +152,7 @@
                 "source": "https://github.com/davidmars/pov-2018/tree/master",
                 "issues": "https://github.com/davidmars/pov-2018/issues"
             },
-            "time": "2019-03-06T12:56:46+00:00"
+            "time": "2019-03-28T10:27:09+00:00"
         },
         {
             "name": "davidmars/redbean",
@@ -334,16 +334,16 @@
         },
         {
             "name": "jaybizzle/crawler-detect",
-            "version": "v1.2.79",
+            "version": "v1.2.80",
             "source": {
                 "type": "git",
                 "url": "https://github.com/JayBizzle/Crawler-Detect.git",
-                "reference": "e6ce66e9c892c42898cf84a35ecbfec5b4ab481c"
+                "reference": "af6a36e6d69670df3f0a3ed8e21d4b8cc67a7847"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/JayBizzle/Crawler-Detect/zipball/e6ce66e9c892c42898cf84a35ecbfec5b4ab481c",
-                "reference": "e6ce66e9c892c42898cf84a35ecbfec5b4ab481c",
+                "url": "https://api.github.com/repos/JayBizzle/Crawler-Detect/zipball/af6a36e6d69670df3f0a3ed8e21d4b8cc67a7847",
+                "reference": "af6a36e6d69670df3f0a3ed8e21d4b8cc67a7847",
                 "shasum": ""
             },
             "require": {
@@ -379,7 +379,7 @@
                 "crawlerdetect",
                 "php crawler detect"
             ],
-            "time": "2019-03-04T19:10:41+00:00"
+            "time": "2019-04-05T19:52:02+00:00"
         },
         {
             "name": "jenssegers/agent",
