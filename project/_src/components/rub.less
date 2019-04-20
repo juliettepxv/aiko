@@ -1,6 +1,90 @@
 .rub{
   display: inline-flex;
-  border: 4px solid var(--page-color,@color-white);
+
   color: var(--page-color,@color-white);
   .pxy-medium;
+  position: relative;
+
+  font-size: 1.5em;
+  @media(min-width: @screen-md){
+    font-size: 3em;
+  }
+  @media(min-width: @screen-lg){
+    font-size: 5em;
+  }
+
+  &:after,&:before{
+    pointer-events: none;
+    content: '';
+    position: absolute;
+  }
+
+  &:after{
+    border: 4px solid var(--page-color,@color-white);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  &:before{
+    background-position: top left;
+    background-size: contain;
+    @ratio:792 / 1242;
+    @ratioTop:267 / 792;
+    @ratioLeft:303 / 1242;
+    @w:190px;
+    @h:(@w * @ratio);
+    width: @w;
+    height: @h;
+    top: (-@ratioTop * @h);
+    left: (-@ratioLeft * @w);
+
+    @media(min-width: @screen-sm){
+      @w:200px;
+      @h:(@w * @ratio);
+      width: @w;
+      height: @h;
+      top: (-@ratioTop * @h);
+      left: (-@ratioLeft * @w);
+    }
+    @media(min-width: @screen-md){
+      @w:265px;
+      @h:(@w * @ratio);
+      width: @w;
+      height: @h;
+      top: (-@ratioTop * @h);
+      left: (-@ratioLeft * @w);
+    }
+    @media(min-width: @screen-lg){
+      @w:355px;
+      @h:(@w * @ratio);
+      width: @w;
+      height: @h;
+      top: (-@ratioTop * @h);
+      left: (-@ratioLeft * @w);
+    }
+
+
+    @media(min-width: @screen-xl){
+      @w:460px;
+      @h:(@w * @ratio);
+      width: @w;
+      height: @h;
+      top: (-@ratioTop * @h);
+      left: (-@ratioLeft * @w);
+    }
+
+  }
+  &.tache1:before{
+    background-image: url("./taches/tache1.png");
+  }
+  &.tache2:before{
+    background-image: url("./taches/tache2.png");
+  }
+  &.tache3:before{
+    background-image: url("./taches/tache3.png");
+  }
+  &.tache4:before{
+    background-image: url("./taches/tache4.png");
+  }
 }

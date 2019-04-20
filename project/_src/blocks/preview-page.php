@@ -59,9 +59,7 @@ if($page){
 
                 <?if(site()->isRubrique($page)):?>
                     <div class="wrap-rub">
-                        <h1 class="rub">
-                            <?=$page->getValue("shortname_".the()->project->langCode)?>
-                        </h1>
+                        <?=$view->render("components/rub",$page)?>
                     </div>
                 <?endif;?>
 

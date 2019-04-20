@@ -5,15 +5,7 @@ use Classiq\Models\Page;
 ?>
 
 <div class="wrap-rub">
-
-    <?= $vv->wysiwyg()
-        ->field("shortname_lang")
-        ->string(\Pov\Utils\StringUtils::FORMAT_HTML)
-        ->setPlaceholder("Titre court")
-        //->setMediumButtons(["bold", "italic","select-record","removeFormat"])
-        ->htmlTag("h1")
-        ->addClass("rub")
-    ?>
+    <?=$view->render("components/rub",$vv)?>
 </div>
 <div class="wrap-text">
     <?= $vv->wysiwyg()
