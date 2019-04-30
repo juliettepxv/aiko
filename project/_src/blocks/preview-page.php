@@ -9,6 +9,7 @@ $invert=$vv->getData("invert")?"invert":"";
 $href="#";
 $cssColor="";
 $cssIsRub="";
+$isRub=false;
 if($page){
     $href=$page->href();
     /** @var \Classiq\Models\Filerecord $img */
@@ -27,15 +28,17 @@ if($page){
     //couleur
     if(site()->isRubrique($page)){
         $cssColor="--page-color:".site()->getPageColor($page);
+        $isRub=true;
+        $cssIsRub="is-rub";
     }
-    $cssIsRub="is-rub";
+
 
 }
 
 ?>
 <?if($page || cq()->wysiwyg()):?>
 <a href="<?=$href?>" <?= $vv->wysiwyg()->openConfigOnCreate()->attr() ?>
-   class="block block-preview-page <?=$invert?> <?if(site()->isRubrique($page)):?>block-preview-rub<?endif;?>"
+   class="block block-preview-page <?=$invert?> <?if($isRub):?>block-preview-rub<?endif;?>"
     style="<?=$cssColor?>">
 
     <div class="container <?=$cssIsRub?>">

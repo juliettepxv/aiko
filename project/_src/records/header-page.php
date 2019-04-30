@@ -12,7 +12,7 @@ use Classiq\Models\Page;
         ->setPlaceholder("Titre")
         //->setMediumButtons(["bold", "italic","select-record","removeFormat"])
         ->htmlTag("h1")
-        ->addClass("rub")
+        ->addClass("name")
     ?>
 </div>
 <div class="wrap-text">
