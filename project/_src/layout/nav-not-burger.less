@@ -1,7 +1,25 @@
 @media(min-width: @screen-xl){
   #nav{
 
+    position: fixed;
+    z-index: @z-nav;
+    width: 100%;
+    top: 0;
+    display: flex;
+    align-items: center;
+    height: var(--nav-bar-height,80px);
+
     //couleurs etc....
+    padding-top: var(--spacing-medium);
+    padding-bottom: var(--spacing-medium);
+
+    transition:background-color 0.5s;
+    background-color: rgba(7, 16, 25, 0.0);
+    .scrolled & {
+      background-color: rgba(7, 16, 25, 0.7);
+    }
+
+
     a{
       transition: all 0.5s;
       color: @color-white;
@@ -12,17 +30,12 @@
         }
       }
     }
+
     text-transform: uppercase;
     font-size: 0.9em;
     font-weight: bold;
 
-    position: fixed;
-    z-index: @z-nav;
-    width: 100%;
-    top: 0;
-    display: flex;
-    align-items: center;
-    height: var(--nav-bar-height,80px);
+
 
     #nav-mask{
       display: none;

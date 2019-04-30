@@ -1,15 +1,15 @@
 .block-titre {
   .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    .my-big;
+
+    .py-big;
 
     &.encart {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       .tt-titre {
         .encart-titre;
       }
-
       svg {
         display: none;
       }
@@ -19,21 +19,6 @@
       .tt-titre {
         .link;
         color: @color-white;
-      }
-
-      svg {
-
-        width: 135px;
-        height: 15px;
-        color:@color-dark3;
-        @media(min-width: @screen-md){
-          width: 180px;
-          height: 20px;
-        }
-        @media(min-width: @screen-lg){
-          width: 270px;
-          height: 30px;
-        }
       }
     }
 

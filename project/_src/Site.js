@@ -54,8 +54,14 @@ export default class Site{
 
         });
 
-        STAGE.on(EVENTS.RESIZE,function(){
-            me.resizeStage();
+
+        STAGE.on(EVENTS.SCROLL,function(){
+           let sc=$(window).scrollTop();
+           if(sc==0){
+               $body.removeClass("scrolled");
+           }else{
+               $body.addClass("scrolled");
+           }
         });
         $body.on(Pov.events.DOM_CHANGE,function(){
             me.onDomChange();

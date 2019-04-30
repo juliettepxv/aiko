@@ -1,0 +1,52 @@
+.container-ligne{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .py-big;
+
+  >svg{
+    width: 135px;
+    height: 15px;
+    color:@color-dark3;
+    @media(min-width: @screen-md){
+      width: 180px;
+      height: 20px;
+    }
+    @media(min-width: @screen-lg){
+      width: 270px;
+      height: 30px;
+    }
+  }
+
+  >.center{
+    color: @color-white;
+    position: relative;
+    height: 15px;
+    @media(min-width: @screen-md){
+      width: 180px;
+      height: 20px;
+    }
+    @media(min-width: @screen-lg){
+      width: 270px;
+      height: 30px;
+    }
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+    .ico{
+      width: 30px;
+      margin: 0px 20px;
+      position: relative;
+      >svg{
+        height: 100%;
+        width: 100%;
+      }
+    }
+
+
+
+  }
+
+}
