@@ -31,9 +31,10 @@ class Site extends AbstractSingleton
         "blocks/texte",
         "blocks/titre",
         "blocks/img",
+        //"blocks/block-photos/photos",
         "blocks/preview-page",
         //"blocks/img-text",
-        "blocks/block-photos/photos",
+
         "blocks/block-logos/block-logos",
         "blocks/iframe",
         "blocks/video",

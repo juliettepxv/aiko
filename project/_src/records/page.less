@@ -22,9 +22,27 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
-
     flex-wrap: wrap;
     padding-top: 100px;
+
+
+    // si on est sur une page
+    .wrap-header-page{
+      display: flex;
+      flex-direction: column;
+      .wrap-text {
+        @media (min-width: @screen-xl) {
+          margin-top: var(--spacing-big);
+          max-width: 100%;
+
+          .txt{
+            margin-top: var(--spacing-small);
+          }
+        }
+      }
+
+    }
+
     @media (min-width: @screen-xl) {
       padding-top: 0px;
       height: 800px;
@@ -46,6 +64,7 @@
     }
 
     .rub {
+
       margin: 0 var(--spacing-small) 0 0;
 
       @media (min-width: @screen-xs) {
@@ -57,6 +76,8 @@
       }
 
     }
+
+
 
     .wrap-text {
       display: flex;

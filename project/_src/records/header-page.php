@@ -4,6 +4,8 @@ use Classiq\Models\Page;
 
 ?>
 
+<div class="wrap-header-page">
+
 <div class="wrap-rub">
 
     <?= $vv->wysiwyg()
@@ -12,7 +14,7 @@ use Classiq\Models\Page;
         ->setPlaceholder("Titre")
         //->setMediumButtons(["bold", "italic","select-record","removeFormat"])
         ->htmlTag("h1")
-        ->addClass("name")
+        ->addClass("rub")
     ?>
 </div>
 <div class="wrap-text">
@@ -33,4 +35,5 @@ use Classiq\Models\Page;
         ->htmlTag("div")
         ->addClass("txt")
     ?>
+</div>
 </div>
