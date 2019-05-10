@@ -13,7 +13,7 @@ $posterMode=$vv->getData("posterMode");
 if($posterMode){
     $containerCss="poster";
     $containerRatioCss="";
-    $vdoAttr="autoplay='autoplay' moted='muted' loop='loop' ";
+    $vdoAttr="autoplay='autoplay' muted='muted' loop='loop' ";
 }else{
     $containerCss="container";
     $containerRatioCss="embed-responsive embed-responsive-16by9";

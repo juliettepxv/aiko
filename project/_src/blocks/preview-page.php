@@ -20,7 +20,7 @@ if($page){
     if($img){
         $imgTag=$img
             ->image()
-            ->width(800)
+            ->sizeCover("800","450")
             ->jpg()
             ->htmlTag()
             ->addClass("img-responsive");
