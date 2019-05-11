@@ -88,5 +88,7 @@ if(!the()->requestUrl->isAjax){
 
         <div class="webpack-time"></div>
 
+        <?=$view->render("components/test-breakpoints")?>
+
     </div>
 <?endif?>
