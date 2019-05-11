@@ -1,33 +1,43 @@
 #nav {
+
+  .activator{
+    transition: left 0.2s ease-out, width 0.1s ease-out, border 0.1s ease-in 0.2s;
+    position: absolute;
+    height: 0px;
+    width: 0px;
+    border: 1px solid #fff;
+    pointer-events: none;
+    &.is-active{
+      border: 3px solid #fff;
+    }
+    &.is-invisible{
+      opacity: 0;
+      transform: scale(1.2);
+    }
+  }
+  .menu{
+    position: relative;
+  }
+
+  [data-href-uid]{
+    color: #fff;
+  }
+
   a {
     color: currentColor;
     text-decoration: none;
     position: relative;
-
-
     border: 3px solid transparent;
-    &:after{
-      transition: all 0.2s;
-      content: '';
-      height: 0px;
-      width: 100%;
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      background-color: @color-dark4;
-    }
-
-
 
     &.active {
-      border: 3px solid @color-white;
+      //border: 1px dotted @color-white;
+      //opacity: 0.5;
     }
   }
 
   .wrap-logo {
     width: var(--nav-menu-width, 80px);
     height: var(--nav-bar-height, 80px);
-
     .logo {
       display: block;
       width: 100%;

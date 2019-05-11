@@ -73,8 +73,9 @@ export default class Site{
      * Selectionne / déselectionne l'item de nav de la page en cours
      */
     static navActive(){
-        $("[data-href-uid]").removeClass("active");
-        $("[data-href-uid='"+PovHistory.currentPageInfo.rubriqueUid+"']").addClass("active");
+        NavMenu.setActivePage();
+
+
     }
 
     /**

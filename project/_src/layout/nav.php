@@ -8,11 +8,10 @@ $menu=\Classiq\Models\Nav::getByName("menu",true);
     <div class="container">
         <div id="nav-bar" >
 
-            <a class="wrap-logo">
+            <a class="wrap-logo" href="<?=cq()->homePage()->href()?>">
                 <span class="logo bgimg-contain"
                    style="background-image: url('<?=the()->fileSystem->filesystemToHttp("project/logo.png")?>')"
-                   href="<?=cq()->homePage()->href()?>"></span>
-
+                   ></span>
             </a>
 
             <button data-nav-menu-toggle class="burger d-flex d-xl-none unstyled">
@@ -23,6 +22,7 @@ $menu=\Classiq\Models\Nav::getByName("menu",true);
         </div>
 
         <div id="nav-content">
+
 
             <?=$menu->wysiwyg()->field("items")
                 ->listJson(["layout/item"])
