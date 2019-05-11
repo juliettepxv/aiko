@@ -4,6 +4,7 @@
     animation-duration: 0.2s;
     animation-fill-mode: forwards;
     animation-timing-function: ease-out;
+    transform-origin: top;
   }
 }
 [data-page-transition-state="start"]{
@@ -20,9 +21,12 @@
 @keyframes kf-to-left {
   0%{
     transform: translateX(0);
+    transform: skewY(0);
   }
   100%{
     transform: translateX(-10%);
+    transform: skewY(-5deg);
+    filter: hue-rotate(180deg) contrast(3);
     opacity: 0;
   }
 }
@@ -30,9 +34,11 @@
   0%{
     opacity: 0;
     transform: translateX(10%);
+    transform: skewY(5deg);
   }
   100%{
     transform: translateX(0%);
+    transform: skewY(0);
   }
 }
 
