@@ -1,10 +1,46 @@
 .rub{
-  display: inline-flex;
-
-  color: var(--page-color,@color-white);
-  .pxy-medium;
+  //display: inline-flex;
   position: relative;
+  .sprites{
+    position: absolute;
+    transform-origin: center center;
+    //outline: 1px solid red;
 
+    top: calc( -180px );
+    left: calc( 50% - 230px );
+    transform: rotate(90deg) scale(0.3) ;
+
+    @media(min-width: @screen-md){
+      top: calc( -170px );
+      left: calc( 50% - 220px );
+      transform: rotate(90deg) scale(0.4) ;
+    }
+    @media(min-width: @screen-lg){
+      top: calc( -170px );
+      left: calc( 50% - 230px );
+      transform: rotate(90deg) scale(0.5) ;
+    }
+    @media(min-width: @screen-xl){
+      top: calc( -150px );
+      left: calc( 50% - 200px );
+      transform: rotate(90deg) scale(0.8) ;
+    }
+  }
+  >span{
+    .pxy-medium;
+    background-color: @color-dark1;
+    display: block;
+    position: relative;
+    z-index: 1;
+    color: var(--page-color,@color-white);
+    border: 4px solid var(--page-color,@color-white);
+    mix-blend-mode: darken;
+    //mix-blend-mode: color-burn;
+    //mix-blend-mode: hard-light;
+  }
+
+
+  //responsive
   font-size: 1.5em;
   @media(min-width: @screen-md){
     font-size: 3em;
@@ -12,7 +48,7 @@
   @media(min-width: @screen-lg){
     font-size: 5em;
   }
-
+  /*
   &:after,&:before{
     pointer-events: none;
     content: '';
@@ -87,4 +123,6 @@
   &.tache4:before{
     background-image: url("./taches/tache4.png");
   }
+
+   */
 }
