@@ -72,7 +72,7 @@ if($page){
 
                         <?//image----------------?>
                         <? if ($imgTag): ?>
-                            <div class="block-img ">
+                            <div class="block-img " data-aos="glitch">
                                 <div class="img-wrap">
                                     <?=$imgTag?>
                                 </div>
@@ -94,13 +94,13 @@ if($page){
 
 
 
-                        <div class="block-texte">
+                        <div class="block-texte" data-aos="glitch">
 
-                            <h3 class="title">
+                            <h3 class="title" >
                                 <?=$page->getValue("name_".the()->project->langCode)?>
                             </h3>
 
-                            <div class="txt">
+                            <div class="txt" >
                                 <?=$page->getValue("vars.texte_".the()->project->langCode)?>
                             </div>
 

@@ -27,6 +27,8 @@ export default class Site{
         //require("./blocks/FormContact");
         //FormContact.initFromDom();
 
+        require("./components/aos");
+
         //ferme le menu quand on change d'url
         $body.on(EVENTS.HISTORY_CHANGE_URL,function(){
             $body.attr("data-page-transition-state","start");

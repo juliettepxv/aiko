@@ -40,13 +40,13 @@ if($imgs){
             <div class="col-12 col-lg-9 is-images">
                 <div class="row cadre <?=$imgs?"multiple":""?>">
                     <?if($style==="two-images"):?>
-                        <div class="col-6 img-wrap" data-zoom-img="<?=$image1->image()->sizeMax(1600,1600)->jpg()->href()?>"  >
+                        <div data-aos="glitch" class="col-6 img-wrap" data-zoom-img="<?=$image1->image()->sizeMax(1600,1600)->jpg()->href()?>"  >
                             <?=$image1->image()->sizeCover(600,600)
                                 ->jpg()
                                 ->htmlTag()
                                 ->addClass("img-responsive")?>
                         </div>
-                        <div class="col-6 img-wrap" data-zoom-img="<?=$image2->image()->sizeMax(1600,1600)->jpg()->href()?>"  >
+                        <div  data-aos="glitch" data-aos-delay="500" class="col-6 img-wrap" data-zoom-img="<?=$image2->image()->sizeMax(1600,1600)->jpg()->href()?>"  >
                             <?=$image2->image()->sizeCover(600,600)
                                 ->jpg()
                                 ->htmlTag()
@@ -54,7 +54,7 @@ if($imgs){
                         </div>
                     <?else:?>
                         <?if($image1):?>
-                            <div class="col-12 img-wrap" data-zoom-img="<?=$image1->image()->sizeMax(1600,1600)->jpg()->href()?>"  >
+                            <div data-aos="glitch" class="col-12 img-wrap" data-zoom-img="<?=$image1->image()->sizeMax(1600,1600)->jpg()->href()?>"  >
                                 <?=$image1->image()->width(1200)
                                     ->jpg()
                                     ->htmlTag()
