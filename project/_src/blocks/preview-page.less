@@ -1,75 +1,93 @@
-.block.block-preview-page{
+.block.block-preview-page {
 
   text-decoration: none; //car c'est un lien
   display: block;
 
-  .title,.fleche{
-    color: var(--page-color,#fff);
+  .title, .fleche {
+    color: var(--page-color, #fff);
   }
 
-  &.block-preview-rub{
+  &.block-preview-rub {
     margin-top: 100px;
-    @media(min-width: @screen-lg){
+    @media (min-width: @screen-lg) {
       margin-top: 150px;
     }
-    @media(min-width: @screen-xl){
+    @media (min-width: @screen-xl) {
       margin-top: 200px;
     }
   }
 
-  .is-rub{
+  .is-rub {
     margin-top: var(--spacing-big);
   }
 
 
-
-  .wrap-bg{
+  .wrap-bg {
     position: relative;
-    .gradient-dark;
+
     margin-left: -15px;
     margin-right: -15px;
+    transition: transform 0.5s;
+    transform: scale(1) translateY(50px);
+
+    .gradient-dark;
+
+    &:before {
+      content: "";
+      transition: opacity 0.5s;
+      position: absolute;
+      opacity: 0;
+      display: block;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      .gradient-lighter;
+    }
+
 
     .py-big;
 
-    @media(min-width: @screen-md){
+    @media (min-width: @screen-md) {
       margin-left: 0px;
       margin-right: 0px;
     }
 
-    .img-wrap{
+    .img-wrap {
       margin-left: 10px;
       margin-right: 10px;
-      @media(min-width: @screen-sm){
+      transition: transform 2s;
+      transform: scale(1);
+
+      @media (min-width: @screen-sm) {
         margin-left: var(--spacing-invert);
       }
-      @media(min-width: @screen-md){
+      @media (min-width: @screen-md) {
         margin-right: 0;
       }
       .my-medium;
-      img{
+
+      img {
         .radius-img;
         .shadow-big;
       }
     }
 
 
-
-
-
-    .block-texte{
+    .block-texte {
       display: flex;
       flex-direction: column;
       justify-content: center;
       height: 100%;
 
       margin-right: var(--spacing-big);
-      margin-left:  var(--spacing-small);
+      margin-left: var(--spacing-small);
 
-      .title{
+      .title {
         .mb-medium;
       }
 
-      .svg{
+      .svg {
         .mt-medium;
         width: 60px;
         height: 26px;
@@ -77,22 +95,26 @@
 
     }
   }
-  &.invert{
-    @media(min-width: @screen-md){
-      .row{
-        .rub{
+
+  &.invert {
+    @media (min-width: @screen-md) {
+      .row {
+        .rub {
           margin-left: var(--spacing-big);
-          margin-right:  var(--spacing-small);
+          margin-right: var(--spacing-small);
         }
-        .block-texte{
+
+        .block-texte {
           margin-left: var(--spacing-big);
-          margin-right:  var(--spacing-small);
+          margin-right: var(--spacing-small);
         }
-        .img-wrap{
+
+        .img-wrap {
           margin-right: var(--spacing-invert);
         }
-        div{
-          &:first-child{
+
+        div {
+          &:first-child {
             order: 2;
           }
         }
@@ -103,53 +125,66 @@
   }
 
 
-  .wrap-rub{
+  .wrap-rub {
     position: absolute;
     z-index: 1;
     width: 100%;
     display: flex;
     justify-content: center;
     top: -35px;
-    @media(min-width: @screen-sm){
+    transition: transform 2s;
+    transform: scale(1);
+    @media (min-width: @screen-sm) {
       justify-content: flex-start;
       //top: -35px;
-      padding-left: calc( var(--spacing-big)) ;
+      padding-left: calc(var(--spacing-big)) ;
     }
-    @media(min-width: @screen-md){
+    @media (min-width: @screen-md) {
       top: -45px;
-      padding-left: calc( 50% + var(--spacing-medium)) ;
+      padding-left: calc(50% + var(--spacing-medium)) ;
       .invert& {
-        padding-left: calc( var(--spacing-big)) ;
+        padding-left: calc(var(--spacing-big));
       }
     }
-    @media(min-width: @screen-lg){
+    @media (min-width: @screen-lg) {
       top: -60px;
     }
-    @media(min-width: @screen-xl){
+    @media (min-width: @screen-xl) {
       top: -70px;
     }
 
-    .rub{
+
+    .rub {
 
 
     }
   }
 
-  &:hover{
-    .fleche {
-      animation-name: kf-left-right;
-      animation-iteration-count: infinite;
-      animation-duration: 0.4s;
-      animation-direction: alternate;
-      animation-timing-function: ease-out;
-      animation-fill-mode: forwards;
+  &:hover {
+    .wrap-bg {
+      transform: scale(1.01);
+      .wrap-rub, .img-wrap {
+        transform: scale(1.02);
+      }
+      &:before {
+        opacity: 1;
+      }
+
+      .fleche {
+        animation-name: kf-left-right;
+        animation-iteration-count: infinite;
+        animation-duration: 0.4s;
+        animation-direction: alternate;
+        animation-timing-function: ease-out;
+        animation-fill-mode: forwards;
+      }
     }
   }
 
 }
 
 @keyframes kf-left-right {
-  to{
+  to {
     transform: translateX(30px);
   }
 }

@@ -1,7 +1,7 @@
 <?php
 /** @var \Classiq\Models\Page $vv */
 ?>
-<h1 <?=$view->attrRefresh($vv->uid())?> class="rub <?=$vv->getValue("vars.tache")?>" data-aos="glitch">
+<h1 <?=$view->attrRefresh($vv->uid())?> class="rub <?=$vv->getValue("vars.tache")?>" data-aos="floating">
 
 
     <div class="sprites">

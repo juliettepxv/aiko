@@ -58,7 +58,7 @@ if($page){
             */
             ?>
 
-            <div class="wrap-bg ">
+            <div class="wrap-bg aos-animate" data-aos="floating">
 
                 <?if(site()->isRubrique($page)):?>
                     <div class="wrap-rub">
@@ -72,7 +72,7 @@ if($page){
 
                         <?//image----------------?>
                         <? if ($imgTag): ?>
-                            <div class="block-img " data-aos="glitch">
+                            <div class="block-img delay" data-aos="floating">
                                 <div class="img-wrap">
                                     <?=$imgTag?>
                                 </div>
@@ -94,7 +94,7 @@ if($page){
 
 
 
-                        <div class="block-texte" data-aos="glitch">
+                        <div class="block-texte">
 
                             <h3 class="title" >
                                 <?=$page->getValue("name_".the()->project->langCode)?>

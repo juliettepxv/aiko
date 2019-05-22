@@ -42,5 +42,25 @@
       background-image: linear-gradient(to bottom, @color-dark3 , @color-dark4);
     }
 
+    &[data-aos="floating"]{
+      &:before,&:after{
+        transition: all 1.75s !important;
+        transform: translateY(50px);
+        opacity: 0;
+      }
+      &.aos-animate {
+        &:before,&:after{
+          opacity: 1;
+        }
+        &:before {
+          transform: scale(0.90) translateY(-30px);
+        }
+        &:after {
+          transform: scale(0.80) translateY(-60px);
+        }
+      }
+    }
+
+
   }
 }

@@ -57,7 +57,7 @@ if(!the()->requestUrl->isAjax){
 <?else:?>
     <div id="root" history-hrefs>
 
-        <main id="main" class="<?=cq()->wysiwyg()?"is-admin":""?>">
+        <main id="main" class="<?=cq()->wysiwyg()?"is-admin":"is-human"?>">
             <div id="main-content" history-receiver>
                 <?=$view->insideContent?>
             </div>

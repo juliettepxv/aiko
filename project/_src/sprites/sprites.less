@@ -1,10 +1,12 @@
-
+@sprite-a-w:217px;
+@sprite-a-h:157px;
+@sprite-a-steps:19;
 
 
 .sprites{
   position: relative;
-  width:453px;
-  height:393px;
+  width:@sprite-a-w;
+  height:@sprite-a-h;
   .sprite-a{
     position: absolute;
     width: 100%;
@@ -14,14 +16,14 @@
 .sprite-a{
   float: left;
 
-  background-image: url('./sprite-ok.png');
+  background-image: url('./trace.png');
   //outline: 1px solid red;
   //transition: background-position 1s step-start;
   &.animate{
     animation-name: sprite-a;
     animation-duration: 0.75s;
     animation-iteration-count: infinite;
-    animation-timing-function: steps(13);
+    animation-timing-function: steps(@sprite-a-steps);
     //animation: sprite-a 1s steps(17) infinite alternate;
   }
 
@@ -35,14 +37,14 @@
   }
   &:nth-child(2){
     animation-delay: 0.2s;
-    animation-duration: 1s;
+    animation-duration: 0.97s;
     top: 10px;
     left: 10px;
     //transform: skewX(45deg);
   }
   &:nth-child(3){
     animation-delay: 0.7s;
-    animation-duration: 0.5s;
+    animation-duration: 0.74s;
     top: 50px;
     left: 10px;
   }
@@ -87,7 +89,7 @@
     //transform: rotate(0);
   }
   to {
-    background-position: calc( 453px * 13 * -1 ); // 120px * 17 images
+    background-position: calc( @sprite-a-w * @sprite-a-steps * -1 ); // 120px * 17 images
     //transform: rotate(45deg);
   }
 }
