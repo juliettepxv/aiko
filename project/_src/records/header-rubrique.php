@@ -6,8 +6,7 @@ use Classiq\Models\Page;
 
 <div class="wrap-rub">
     <?=$view->render("components/rub",$vv)?>
-</div>
-<div class="wrap-text">
+    <div class="pt-medium ">
     <?= $vv->wysiwyg()
         ->field("name_lang")
         ->string(\Pov\Utils\StringUtils::FORMAT_HTML)
@@ -17,16 +16,9 @@ use Classiq\Models\Page;
         ->addClass("title")
     ?>
 
-    <?= $vv->wysiwyg()
-        ->field("vars.texte_lang")
-        ->string(\Pov\Utils\StringUtils::FORMAT_HTML)
-        ->setPlaceholder("Texte d'intro")
-        //->setMediumButtons(["bold", "italic","select-record","removeFormat"])
-        ->htmlTag("div")
-        ->addClass("txt")
-    ?>
-</div>
+    </div>
 
+</div>
 <? if ($vv->thumbnail): ?>
     <div class="block-img py-medium">
         <div class="img-wrap" data-zoom-img="<?= $vv->thumbnail()->sizeMax(1600, 1600)->jpg()->href() ?>">
@@ -46,3 +38,15 @@ use Classiq\Models\Page;
     </div>
 <? endif ?>
 
+
+
+<div class="wrap-text">
+    <?= $vv->wysiwyg()
+        ->field("vars.texte_lang")
+        ->string(\Pov\Utils\StringUtils::FORMAT_HTML)
+        ->setPlaceholder("Texte d'intro")
+        //->setMediumButtons(["bold", "italic","select-record","removeFormat"])
+        ->htmlTag("div")
+        ->addClass("txt")
+    ?>
+</div>

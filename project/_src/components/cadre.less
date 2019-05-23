@@ -12,8 +12,18 @@
     img{
       border-radius: @radius;
       overflow: hidden;
-      box-shadow: 2px 5px 50px 0px rgba(0, 0, 0, 0.8);
+      .shadow-big;
+
+      transition: all 0.3s;
+      transform: scale(1);
+      &:hover {
+        .shadow-lighter;
+        transform: scale(1.02);
+
+      }
     }
+
+
   }
 
 
