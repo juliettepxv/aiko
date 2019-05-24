@@ -5,15 +5,9 @@
 
 
     <div class="sprites">
-        <div class="sprite-a animate filter-black2blue"></div>
-        <div class="sprite-a animate filter-black2purple"></div>
-        <div class="sprite-a animate filter-black2green"></div>
-        <div class="sprite-a animate filter-black2orange"></div>
-        <?/*
-        <div class="sprite-a animate filter-black2blue"></div>
-        <div class="sprite-a animate filter-black2orange"></div>
-        <div class="sprite-a animate filter-black2yellow"></div>
-        */?>
+
+        <?=$view->renderIfValid("sprites/".$vv->getValue("vars.tache"))?>
+
     </div>
     <span>
         <?=$vv->getValue("shortname_".the()->project->langCode)?>
