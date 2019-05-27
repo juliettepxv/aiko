@@ -26,28 +26,6 @@
     padding-top: 100px;
 
 
-    // si on est sur une page
-    .wrap-header-page{
-      display: flex;
-      flex-direction: column;
-      /*.wrap-text {
-        @media (min-width: @screen-xl) {
-          margin-top: var(--spacing-big);
-          max-width: 100%;
-          .txt{
-            margin-top: var(--spacing-small);
-          }
-        }
-      }*/
-
-    }
-
-    /*@media (min-width: @screen-xl) {
-      padding-top: 0px;
-      height: 800px;
-      flex-wrap: nowrap;
-    }*/
-
     .block-img {
       margin: 0 0 0 var(--spacing-big);
       img {
@@ -64,14 +42,18 @@
     }
 
     .wrap-rub{
+
+      margin-top: var(--spacing-big);
+
       .title{
+        padding-top: var(--spacing-medium);
         color: var(--page-color);
       }
 
       .rub {
         margin: 0 var(--spacing-big) 0 0;
-
       }
+
     }
 
 
@@ -82,13 +64,13 @@
       flex-direction: column;
       margin-top: var(--spacing-big);
       margin-bottom: var(--spacing-big);
-      text-align: center;
-
-
 
       @media (min-width: @screen-xl) {
         order: inherit;
-        max-width: 80%;
+
+        >h3, >div{
+          max-width: 80%;
+        }
 
       }
     }

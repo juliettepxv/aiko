@@ -40,7 +40,7 @@ if(!the()->requestUrl->isAjax){
     //manifest
     the()->htmlLayout()->webAppManifest=the()->fileSystem->filesystemToHttp("manifest.json")."?r=".date("Y-m-d-H-i-s");
     the()->htmlLayout()->webAppManifest=\Pov\Defaults\C_default::quickView_url("manifest");
-    the()->htmlLayout()->meta->themeColor="#ff0000";
+    the()->htmlLayout()->meta->themeColor="#000000";
 
     $view->inside("layout/html5bp",the()->htmlLayout());
 }

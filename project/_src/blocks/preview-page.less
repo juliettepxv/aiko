@@ -1,36 +1,22 @@
 .block.block-preview-page {
-
   text-decoration: none; //car c'est un lien
   display: block;
 
-  .title, .fleche {
-    color: var(--page-color, #fff);
-  }
-
-  &.block-preview-rub {
-    margin-top: 100px;
-    @media (min-width: @screen-lg) {
-      margin-top: 150px;
-    }
-    @media (min-width: @screen-xl) {
-      margin-top: 200px;
-    }
-  }
-
-  .is-rub {
-    margin-top: var(--spacing-big);
-  }
-
+  // background
 
   .wrap-bg {
     position: relative;
+    transition: transform 0.4s !important;
+    transform: scale(1) translateY(50px);
+    .py-big;
+    .gradient-dark;
 
     margin-left: -15px;
     margin-right: -15px;
-    transition: transform 0.4s !important;
-    transform: scale(1) translateY(50px);
-
-    .gradient-dark;
+    @media (min-width: @screen-md) {
+      margin-left: 0px;
+      margin-right: 0px;
+    }
 
     &:before {
       content: "";
@@ -46,30 +32,28 @@
     }
 
 
-    .py-big;
-
-    @media (min-width: @screen-md) {
-      margin-left: 0px;
-      margin-right: 0px;
-    }
-
     .img-wrap {
-      margin-left: 10px;
-      margin-right: 10px;
+
       transition: transform 2s;
       transform: scale(1);
 
-      @media (min-width: @screen-sm) {
-        margin-left: var(--spacing-invert);
-      }
+      margin-left: var(--spacing-medium);
+      margin-right: var(--spacing-medium);
+      margin-top: 60px;
+
       @media (min-width: @screen-md) {
+        margin-left: var(--spacing-invert);
         margin-right: 0;
+        .my-medium;
       }
-      .my-medium;
 
       img {
         .radius-img;
         .shadow-big;
+        @media (min-width: @screen-md) {
+          position: relative;
+          top: 7px;
+        }
       }
     }
 
@@ -81,10 +65,24 @@
       height: 100%;
 
       margin-right: var(--spacing-big);
-      margin-left: var(--spacing-small);
+      margin-left: var(--spacing-big);
+
+      @media (min-width: @screen-md) {
+        margin-right: var(--spacing-medium);
+        margin-left: var(--spacing-medium);
+      }
+
+      @media (min-width: @screen-lg) {
+        margin-right: var(--spacing-big);
+        margin-left: var(--spacing-big);
+      }
 
       .title {
-        .mb-medium;
+        .my-medium;
+      }
+
+      .title, .fleche {
+        color: var(--page-color, #fff);
       }
 
       .svg {
@@ -95,6 +93,59 @@
 
     }
   }
+
+
+
+
+  // rubrique
+
+  &.block-preview-rub {
+    margin-top: 150px;
+    margin-bottom: var(--spacing-big);
+    @media (min-width: @screen-lg) {
+      margin-top: 150px;
+    }
+    @media (min-width: @screen-xl) {
+      margin-top: 200px;
+    }
+  }
+
+  .is-rub {
+    margin-top: var(--spacing-big);
+  }
+
+
+  // rub
+
+  .wrap-rub {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    display: flex;
+    top: -50px;
+    transition: transform 2s;
+    transform: scale(1);
+
+    justify-content: center;
+
+    @media (min-width: @screen-md) {
+      justify-content: inherit;
+      top: -70px;
+      padding-left: calc(50% + var(--spacing-small) + var(--spacing-big)) ;
+      .invert& {
+        padding-left: calc(var(--spacing-big));
+      }
+    }
+    @media (min-width: @screen-lg) {
+      top: -60px;
+    }
+    @media (min-width: @screen-xl) {
+      top: -70px;
+    }
+
+  }
+
+  // position inversée
 
   &.invert {
     @media (min-width: @screen-md) {
@@ -125,47 +176,15 @@
   }
 
 
-  .wrap-rub {
-    position: absolute;
-    z-index: 1;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    top: -35px;
-    transition: transform 2s;
-    transform: scale(1);
-    @media (min-width: @screen-sm) {
-      justify-content: flex-start;
-      //top: -35px;
-      padding-left: calc(var(--spacing-big)) ;
-    }
-    @media (min-width: @screen-md) {
-      top: -45px;
-      padding-left: calc(50% + var(--spacing-medium)) ;
-      .invert& {
-        padding-left: calc(var(--spacing-big));
-      }
-    }
-    @media (min-width: @screen-lg) {
-      top: -60px;
-    }
-    @media (min-width: @screen-xl) {
-      top: -70px;
-    }
-
-
-    .rub {
-
-
-    }
-  }
-
+  //
   &:hover {
     .wrap-bg {
       transform: scale(1.02);
+
       .wrap-rub, .img-wrap {
         transform: scale(1.03);
       }
+
       &:before {
         opacity: 1;
       }

@@ -4,6 +4,19 @@
  * @var Classiq\Models\JsonModels\ListItem $vv
  *
  */
+/** @var Filerecord[] $imgs La liste d'image */
+$imgs = $vv->getDataAsRecords("images");
+$options=[
+        "Une image horizontale"=>"one-image",
+        "Une image verticale"=>"one-image vertical",
+];
+if(count($imgs)>1){
+    $o=["Deux images carrées"=>"two-images"];
+    $options=array_merge($options,$o);
+
+    $o=["Deux images verticales"=>"two-images vertical"];
+    $options=array_merge($options,$o);
+}
 ?>
 <label>Images</label>
 <?=$vv->wysiwyg()->field("images")
@@ -14,23 +27,21 @@
         ->buttonRecord()
         ->render()
 ?>
+
 <label>Style</label>
 <?=$vv->wysiwyg()
     ->field("style")
     ->string()
     ->onSavedRefreshListItem($vv)
-    ->select([
-            "Une image"=>"one-image",
-            "Deux images"=>"two-images",
-    ])
+    ->select($options)
 ?>
-
-<label>Zone de texte?</label>
+<?/*
+<label>Orientation?</label>
 <?=$vv->wysiwyg()
-    ->field("texte")
+    ->field("orientation")
     ->bool()
     ->onSavedRefreshListItem($vv)
-    ->checkbox("Activer")
+    ->checkbox("Vertical")
 ?>
 <?if($vv->getData("texte")):?>
     <?=$vv->wysiwyg()
@@ -40,5 +51,5 @@
         ->checkbox("inverser la mise en page")
     ?>
 <?endif;?>
-
+*/?>
 

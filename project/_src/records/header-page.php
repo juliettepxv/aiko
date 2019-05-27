@@ -7,17 +7,15 @@ use Classiq\Models\Page;
 <div class="wrap-header-page">
 
 <div class="wrap-rub">
-
+<h1 class="rub">
     <?= $vv->wysiwyg()
         ->field("name_lang")
         ->string(\Pov\Utils\StringUtils::FORMAT_HTML)
         ->setPlaceholder("Titre")
         //->setMediumButtons(["bold", "italic","select-record","removeFormat"])
-        ->htmlTag("h1")
-        ->addClass("rub")
+        ->htmlTag("span")
     ?>
-</div>
-<div class="wrap-text">
+</h1>
     <?= $vv->wysiwyg()
         ->field("vars.title_lang")
         ->string(\Pov\Utils\StringUtils::FORMAT_HTML)
@@ -26,7 +24,8 @@ use Classiq\Models\Page;
         ->htmlTag("h3")
         ->addClass("title")
     ?>
-
+</div>
+<div class="wrap-text">
     <?= $vv->wysiwyg()
         ->field("vars.texte_lang")
         ->string(\Pov\Utils\StringUtils::FORMAT_HTML)
