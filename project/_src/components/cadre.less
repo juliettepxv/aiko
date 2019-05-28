@@ -1,8 +1,6 @@
 .cadre{
 
-  @radius:16px;
   position: relative;
-
 
   .img-wrap{
     //border-radius: @radius;
@@ -10,7 +8,7 @@
     z-index: 10;
     //overflow: hidden;
     img{
-      border-radius: @radius;
+      .radius-img;
       overflow: hidden;
       .shadow-big;
 
@@ -31,7 +29,7 @@
     margin-top: var(--spacing-medium);
     &:before,&:after{
       content:"";
-      border-radius: @radius;
+      .radius-img;
       position: absolute;
       //background-color: lighten(@color-dark1,10%);
       width: 100%;

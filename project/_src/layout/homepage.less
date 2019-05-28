@@ -1,0 +1,68 @@
+.angle-degrade {
+  //transform: scaleX(-1);
+  position: absolute;
+}
+
+.intro {
+  height: 800px;
+  display: flex;
+  align-items: center;
+
+  .wrap-text {
+    display: flex;
+    flex-direction: column;
+    color: white;
+
+    .wrap-h1 {
+      overflow: hidden;
+
+      h1 {
+        transition: top 0.5s;
+        position: relative;
+        top: 50px;
+
+        font-size: 1.5em;
+
+        span {
+          font-size: 0.6em;
+        }
+      }
+    }
+  }
+
+
+  .tirets {
+    position: relative;
+    top: -75px;
+    left: 25px;
+    > svg {
+      position: absolute;
+      transition: left 0.3s;
+      left: 0px;
+      color: @color-dark4;
+      &:last-child {
+        color: @color-dark1;
+      }
+    }
+  }
+
+  .wrap-rub{
+    .menu{
+
+    }
+  }
+
+  &:hover {
+
+    .wrap-text .wrap-h1 h1 {
+      top: 0px;
+    }
+
+    .tirets .svg:last-child {
+      left: 270px;
+
+    }
+  }
+
+
+}

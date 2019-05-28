@@ -20,8 +20,8 @@ use Classiq\Models\Page;
 
 </div>
 <? if ($vv->thumbnail): ?>
-    <div class="block-img py-medium">
-        <div class="img-wrap" data-zoom-img="<?= $vv->thumbnail()->sizeMax(1600, 1600)->jpg()->href() ?>">
+    <div class="block-img">
+        <div class="img-wrap">
             <?= $vv->thumbnail()
                 ->width(800)
                 ->png()

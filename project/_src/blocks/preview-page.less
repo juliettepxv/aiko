@@ -1,7 +1,29 @@
 .block.block-preview-page {
   text-decoration: none; //car c'est un lien
-  display: block;
 
+
+  .container{
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: var(--spacing-big) 0;
+  }
+
+  .tiret{
+    position: absolute;
+
+    color:@color-dark3;
+    transition: height 0.5s;
+    overflow: hidden;
+    height: 0;
+
+    &:first-of-type{
+      right: -250px;
+    }
+    &:last-of-type{
+      left: -250px;
+    }
+  }
   // background
 
   .wrap-bg {
@@ -20,7 +42,7 @@
 
     &:before {
       content: "";
-      transition: opacity 0.3s;
+      transition: all 0.5s;
       position: absolute;
       opacity: 0;
       display: block;
@@ -28,7 +50,8 @@
       left: 0;
       height: 100%;
       width: 100%;
-      .gradient-lighter;
+      transform: skewX(45deg) scaleX(0);
+      background-image: linear-gradient(-135deg, var(--page-color), @color-pink);
     }
 
 
@@ -85,6 +108,11 @@
         color: var(--page-color, #fff);
       }
 
+      .title, .fleche, .txt {
+        transition: color 0.5s;
+      }
+
+
       .svg {
         .mt-medium;
         width: 60px;
@@ -93,8 +121,6 @@
 
     }
   }
-
-
 
 
   // rubrique
@@ -149,6 +175,20 @@
 
   &.invert {
     @media (min-width: @screen-md) {
+      .tiret{
+
+        &:first-of-type{
+          right: inherit;
+          left: -250px;
+        }
+        &:last-of-type{
+          left: inherit;
+          right: -250px;
+        }
+      }
+
+
+
       .row {
         .rub {
           margin-left: var(--spacing-big);
@@ -178,8 +218,13 @@
 
   //
   &:hover {
+
+    .tiret{
+      height: 100px;
+    }
     .wrap-bg {
       transform: scale(1.02);
+
 
       .wrap-rub, .img-wrap {
         transform: scale(1.03);
@@ -187,6 +232,7 @@
 
       &:before {
         opacity: 1;
+        transform: skewX(0deg) ;
       }
 
       .fleche {
@@ -196,6 +242,12 @@
         animation-direction: alternate;
         animation-timing-function: ease-out;
         animation-fill-mode: forwards;
+
+
+      }
+
+      .title, .fleche, .txt {
+        color: white;
       }
     }
   }

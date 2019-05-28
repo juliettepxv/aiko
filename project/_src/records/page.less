@@ -1,19 +1,20 @@
-.page{
+.page {
 
-  --page-color:#fff;
+  --page-color: #fff;
+  --page-color2: #fff;
 
-  >svg.angle-degrade {
+  > svg.angle-degrade {
     position: absolute;
     right: 0;
-    width: 70%;
+    width: 110%;
     height: auto;
-    @media (min-width: @screen-sm) {
+    @media (min-width: @screen-xs) {
       width: 80%;
     }
-    @media (min-width: @screen-md) {
-      width: auto;
-      height: auto;
+    @media (min-width: @screen-lg) {
+      width: 60%;
     }
+
   }
 
 
@@ -21,31 +22,55 @@
     position: relative;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    @media (min-width: @screen-sm) {
+      justify-content: center;
+    }
     flex-wrap: wrap;
-    padding-top: 100px;
+    padding: 100px var(--spacing-medium) 0 var(--spacing-medium);
 
 
     .block-img {
-      margin: 0 0 0 var(--spacing-big);
-      img {
-        max-width: 180px;
-        @media (min-width: @screen-xs) {
-          max-width: 300px;
-        }
-        @media (min-width: @screen-md) {
-          max-width: 400px;
-        }
-
+      top: 80px;
+      right: -30px;
+      position: absolute;
+      @media (min-width: @screen-xs) {
+        right: 30px;
       }
 
+      @media (min-width: @screen-sm) {
+        top: 0px;
+        right: 0px;
+        position: inherit;
+      }
+
+      @media (min-width: @screen-md) {
+
+        padding :  var(--spacing-big) 0 var(--spacing-big) var(--spacing-big);
+      }
+
+      img {
+        max-width: 200px;
+
+        @media (min-width: @screen-xs) {
+          max-width: 230px;
+        }
+
+        @media (min-width: @screen-sm) {
+          max-width: 300px;
+        }
+        @media (min-width: @screen-xl) {
+          max-width: 400px;
+        }
+      }
     }
 
-    .wrap-rub{
+    .wrap-rub {
 
       margin-top: var(--spacing-big);
+      z-index: 1;
 
-      .title{
+      .title {
         padding-top: var(--spacing-medium);
         color: var(--page-color);
       }
@@ -57,22 +82,12 @@
     }
 
 
-
-
     .wrap-text {
       display: flex;
       flex-direction: column;
       margin-top: var(--spacing-big);
       margin-bottom: var(--spacing-big);
 
-      @media (min-width: @screen-xl) {
-        order: inherit;
-
-        >h3, >div{
-          max-width: 80%;
-        }
-
-      }
     }
 
   }

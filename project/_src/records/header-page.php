@@ -7,7 +7,12 @@ use Classiq\Models\Page;
 <div class="wrap-header-page">
 
 <div class="wrap-rub">
-<h1 class="rub">
+<h1  class="rub tache1">
+
+    <div class="sprites">
+        <?=$view->renderIfValid("sprites/tache1")?>
+    </div>
+
     <?= $vv->wysiwyg()
         ->field("name_lang")
         ->string(\Pov\Utils\StringUtils::FORMAT_HTML)

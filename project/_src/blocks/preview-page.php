@@ -5,117 +5,122 @@
  */
 /** @var \Classiq\Models\Page $page */
 $page = $vv->targetUid(true);
-$invert=$vv->getData("invert")?"invert":"";
-$href="#";
-$cssColor="";
-$cssIsRub="";
-$isRub=false;
-if($page){
-    $href=$page->href();
+$invert = $vv->getData("invert") ? "invert" : "";
+$href = "#";
+$cssColor = "";
+$cssIsRub = "";
+$isRub = false;
+if ($page) {
+    $href = $page->href();
     /** @var \Classiq\Models\Filerecord $img */
-    $img=$page->getValueAsRecord("thumbnailAlt");
-    if(!$img){
-        $img=$page->thumbnail(true);
+    $img = $page->getValueAsRecord("thumbnailAlt");
+    if (!$img) {
+        $img = $page->thumbnail(true);
     }
-    if($img){
-        $imgTag=$img
+    if ($img) {
+        $imgTag = $img
             ->image()
-            ->sizeCover("800","450")
+            ->sizeCover("800", "450")
             ->jpg()
             ->htmlTag()
             ->addClass("img-responsive");
     }
     //couleur
-    if(site()->isRubrique($page)){
-        $cssColor="--page-color:".site()->getPageColor($page);
-        $isRub=true;
-        $cssIsRub="is-rub";
+    if (site()->isRubrique($page)) {
+        $cssColor = "--page-color:" . site()->getPageColor($page);
+        $isRub = true;
+        $cssIsRub = "is-rub";
     }
 
 
 }
 
 ?>
-<?if($page || cq()->wysiwyg()):?>
-<a href="<?=$href?>" <?= $vv->wysiwyg()->openConfigOnCreate()->attr() ?>
-   class="block block-preview-page <?=$invert?> <?if($isRub):?>block-preview-rub<?endif;?>"
-    style="<?=$cssColor?>">
+<? if ($page || cq()->wysiwyg()): ?>
+    <a href="<?= $href ?>" <?= $vv->wysiwyg()->openConfigOnCreate()->attr() ?>
+       class="block block-preview-page <?= $invert ?> <? if ($isRub): ?>block-preview-rub<? endif; ?>"
+       style="<?= $cssColor ?>">
 
-    <div class="container <?=$cssIsRub?>">
-        <?if(!$page):?>
+        <div class="container <?= $cssIsRub ?>">
 
-            <div id="cq-style">
-                <div text-center class="cq-box cq-th-danger">
-                    Il faut choisir une page
-                </div>
+            <div class="tiret">
+                <?= pov()->svg->use("startup-tiret-h") ?>
             </div>
 
-        <?else:?>
+            <? if (!$page): ?>
 
-            <?
-            /**
-            * On a une page tout va bien...
-            */
-            ?>
-
-            <div class="wrap-bg aos-animate" data-aos="floating">
-
-                <?if(site()->isRubrique($page)):?>
-                    <div class="wrap-rub">
-                        <?=$view->render("components/rub",$page)?>
+                <div id="cq-style">
+                    <div text-center class="cq-box cq-th-danger">
+                        Il faut choisir une page
                     </div>
-                <?endif;?>
+                </div>
 
-                <div class="row">
+            <? else: ?>
 
-                    <div class="col-sm-12 col-md-6">
+                <?
+                /**
+                 * On a une page tout va bien...
+                 */
+                ?>
 
-                        <?//image----------------?>
-                        <? if ($imgTag): ?>
-                            <div class="block-img delay" data-aos="floating">
-                                <div class="img-wrap">
-                                    <?=$imgTag?>
+                <div class="wrap-bg aos-animate" data-aos="floating">
+
+                    <? if (site()->isRubrique($page)): ?>
+                        <div class="wrap-rub">
+                            <?= $view->render("components/rub", $page) ?>
+                        </div>
+                    <? endif; ?>
+
+                    <div class="row">
+
+                        <div class="col-sm-12 col-md-6">
+
+                            <? //image----------------?>
+                            <? if ($imgTag): ?>
+                                <div class="block-img delay" data-aos="floating">
+                                    <div class="img-wrap">
+                                        <?= $imgTag ?>
+                                    </div>
                                 </div>
+                            <? elseif (\Classiq\Wysiwyg\Wysiwyg::$enabled): ?>
+                                <div text-center class="cq-box cq-th-danger">
+                                    Il faut choisir une image
+                                </div>
+                            <? endif ?>
+
+                        </div>
+
+
+                        <div class="col-sm-12 col-md-6">
+
+                            <? //textes----------------?>
+
+                            <div class="block-texte">
+
+                                <h3 class="title">
+                                    <?= $page->getValue("name_" . the()->project->langCode) ?>
+                                </h3>
+
+                                <div class="txt">
+                                    <?= $page->getValue("vars.texte_" . the()->project->langCode) ?>
+                                </div>
+
+                                <?= pov()->svg->use("startup-arrow-right")->addClass("fleche") ?>
+
                             </div>
-                        <? elseif (\Classiq\Wysiwyg\Wysiwyg::$enabled): ?>
-                            <div text-center class="cq-box cq-th-danger">
-                                Il faut choisir une image
-                            </div>
-                        <? endif ?>
-
-                    </div>
-
-
-
-                    <div class="col-sm-12 col-md-6">
-
-                        <?//textes----------------?>
-
-
-
-
-                        <div class="block-texte">
-
-                            <h3 class="title" >
-                                <?=$page->getValue("name_".the()->project->langCode)?>
-                            </h3>
-
-                            <div class="txt" >
-                                <?=$page->getValue("vars.texte_".the()->project->langCode)?>
-                            </div>
-
-                            <?=pov()->svg->use("startup-arrow-right")->addClass("fleche")?>
 
                         </div>
 
                     </div>
-
                 </div>
+            <? endif ?>
+
+            <div class="tiret">
+                <?= pov()->svg->use("startup-tiret-h") ?>
             </div>
-        <?endif?>
-    </div>
-</a>
-<?endif?>
+        </div>
+    </a>
+<? endif ?>
 
 
 

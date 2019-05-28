@@ -90,4 +90,5 @@ class Site extends AbstractSingleton
         $rub=$this->getRubrique($vv,false);
         return $rub->getValue("vars.couleur");
     }
+
 }

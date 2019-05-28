@@ -6,7 +6,7 @@ the()->htmlLayout()->pageInfo->rubriqueUid = site()->getRubrique($vv,false)->uid
 the()->htmlLayout()->pageInfo->color = site()->getPageColor($vv);
 $view->inside("layout/layout", $vv);
 ?>
-<div class="inside pb-big page">
+<div class="inside page">
     <style>
         .page {
             --page-color: <?=site()->getPageColor($vv)?>;
