@@ -4,63 +4,63 @@
 }
 
 .intro {
-  height: 800px;
   display: flex;
+  flex-direction: column;
   align-items: center;
 
-  .wrap-text {
-    display: flex;
-    flex-direction: column;
-    color: white;
+  .logo-animation{
+    height: 800px;
+    width: 100%;
+    display: block;
+  }
 
-    .wrap-h1 {
-      overflow: hidden;
+  .baseline-rub{
 
-      h1 {
-        transition: top 0.5s;
+    .baseline{
+      display: flex;
+      margin: var(--spacing-medium) 0 0 var(--spacing-medium);
+      .wrap-text {
+        .text {
+          overflow: hidden;
+          h3 {
+            position: relative;
+            top: 0px;
+            transition: top 0.5s;
+          }
+        }
+      }
+      .tiret {
         position: relative;
-        top: 50px;
+        top:-65px;
+        left: 25px;
+        overflow: hidden;
+        transform: skewX(45deg);
 
-        font-size: 1.5em;
 
-        span {
-          font-size: 0.6em;
+        >svg  {
+          color: @color-dark3;
+          transform: skewX(-45deg);
+          position: relative;
+          transition: left 0.3s;
+          left: 0px;
         }
       }
     }
+
   }
 
 
-  .tirets {
-    position: relative;
-    top: -75px;
-    left: 25px;
-    > svg {
-      position: absolute;
-      transition: left 0.3s;
-      left: 0px;
-      color: @color-dark4;
-      &:last-child {
-        color: @color-dark1;
-      }
-    }
-  }
 
-  .wrap-rub{
-    .menu{
 
-    }
-  }
 
   &:hover {
 
-    .wrap-text .wrap-h1 h1 {
-      top: 0px;
+    .baseline-rub .baseline .wrap-text .text h3 {
+      top:50px;
     }
 
-    .tirets .svg:last-child {
-      left: 270px;
-
+    .baseline-rub .baseline .tiret >svg  {
+      left: -300px;
     }
   }
 

@@ -82,13 +82,13 @@ class Site extends AbstractSingleton
     }
 
     /**
-     * Renvoie la couleur associée à la page
+     * Renvoie le theme associé à la page
      * @param Page $vv
      * @return string
      */
-    public function getPageColor($vv){
+    public function getPageTheme($vv){
         $rub=$this->getRubrique($vv,false);
-        return $rub->getValue("vars.couleur");
+        return $rub->getValue("vars.theme");
     }
 
 }

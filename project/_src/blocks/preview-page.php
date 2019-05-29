@@ -7,7 +7,6 @@
 $page = $vv->targetUid(true);
 $invert = $vv->getData("invert") ? "invert" : "";
 $href = "#";
-$cssColor = "";
 $cssIsRub = "";
 $isRub = false;
 if ($page) {
@@ -27,7 +26,6 @@ if ($page) {
     }
     //couleur
     if (site()->isRubrique($page)) {
-        $cssColor = "--page-color:" . site()->getPageColor($page);
         $isRub = true;
         $cssIsRub = "is-rub";
     }
@@ -38,8 +36,7 @@ if ($page) {
 ?>
 <? if ($page || cq()->wysiwyg()): ?>
     <a href="<?= $href ?>" <?= $vv->wysiwyg()->openConfigOnCreate()->attr() ?>
-       class="block block-preview-page <?= $invert ?> <? if ($isRub): ?>block-preview-rub<? endif; ?>"
-       style="<?= $cssColor ?>">
+       class="block block-preview-page theme-<?=site()->getPageTheme($page)?> <?= $invert ?> <? if ($isRub): ?>block-preview-rub<? endif; ?>">
 
         <div class="container <?= $cssIsRub ?>">
 
@@ -98,7 +95,7 @@ if ($page) {
                             <div class="block-texte">
 
                                 <h3 class="title">
-                                    <?= $page->getValue("name_" . the()->project->langCode) ?>
+                                    <?= $page->getValue("subtitle_" . the()->project->langCode) ?>
                                 </h3>
 
                                 <div class="txt">

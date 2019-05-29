@@ -3,15 +3,11 @@
 
 use Classiq\Models\Page;
 the()->htmlLayout()->pageInfo->rubriqueUid = site()->getRubrique($vv,false)->uid();
-the()->htmlLayout()->pageInfo->color = site()->getPageColor($vv);
+the()->htmlLayout()->pageInfo->color = site()->getPageTheme($vv);
 $view->inside("layout/layout", $vv);
 ?>
-<div class="inside page">
-    <style>
-        .page {
-            --page-color: <?=site()->getPageColor($vv)?>;
-        }
-    </style>
+<div class="inside page theme-<?=site()->getPageTheme($vv)?>">
+
 
     <?=$view->render("components/angle-degrade",$vv)?>
 

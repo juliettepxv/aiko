@@ -7,10 +7,10 @@ use Classiq\Models\Page;
 <div class="wrap-header-page">
 
 <div class="wrap-rub">
-<h1  class="rub tache1">
+<h1  class="rub theme">
 
     <div class="sprites">
-        <?=$view->renderIfValid("sprites/tache1")?>
+        <?=$view->renderIfValid("sprites/rose")?>
     </div>
 
     <?= $vv->wysiwyg()

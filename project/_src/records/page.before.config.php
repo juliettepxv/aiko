@@ -22,6 +22,15 @@ use Classiq\Models\Page;
                 ?>
             <?endforeach;?>
 
+            <label>Soustitre</label>
+            <?foreach (the()->project->languages as $lang):?>
+                <?=$vv->wysiwyg()->field("subtitle_$lang")
+                    ->string()
+                    ->input("text",$lang)
+                    ->setAttribute("data-lang",$lang)
+                ?>
+            <?endforeach;?>
+
 
 
         <?else:?>
@@ -40,23 +49,12 @@ use Classiq\Models\Page;
     <h4>Paramètres graphiques</h4>
     <div class="cq-box">
         <fieldset>
-            <label>Couleur</label>
+            <label>Thème</label>
             <?=$vv->wysiwyg()
-                ->field("vars.couleur")
+                ->field("vars.theme")
                 ->string()
                 ->onSavedRefreshRecord($vv)
-                ->input("color")?>
-            <?=$vv->wysiwyg()
-                ->field("vars.couleur")
-                ->string()
-                ->onSavedRefreshRecord($vv)
-                ->input()?>
-            <label>tâche de peinture</label>
-            <?=$vv->wysiwyg()
-                ->field("vars.tache")
-                ->string()
-                ->onSavedRefreshRecord($vv)
-                ->select(["tache1","tache2","tache3","tache4"])?>
+                ->select(["orange","blue","green","pink"])?>
         </fieldset>
     </div>
 <?endif?>

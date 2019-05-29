@@ -10,6 +10,8 @@ $label=$vv->getData("label_lang",$page->getValue("shortname_".the()->project->la
 ?>
 <?if($page):?>
     <li <?=$vv->wysiwyg()->attr()?>>
-        <a  data-href-uid="<?=$page->uid()?>" class="" href="<?=$page->href()?>"><?=$label?></a>
+        <a  data-href-uid="<?=$page->uid()?>" class="theme-<?=site()->getPageTheme($page)?>" href="<?=$page->href()?>"><?=$label?></a>
     </li>
 <?endif?>
+
+

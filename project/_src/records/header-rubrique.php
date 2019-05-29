@@ -8,9 +8,9 @@ use Classiq\Models\Page;
     <?=$view->render("components/rub",$vv)?>
     <div class="pt-medium ">
     <?= $vv->wysiwyg()
-        ->field("name_lang")
+        ->field("subtitle_lang")
         ->string(\Pov\Utils\StringUtils::FORMAT_HTML)
-        ->setPlaceholder("Titre long")
+        ->setPlaceholder("Soustitre")
         //->setMediumButtons(["bold", "italic","select-record","removeFormat"])
         ->htmlTag("h3")
         ->addClass("title")

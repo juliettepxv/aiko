@@ -20,14 +20,14 @@ use Classiq\Models\Page;
             <?if(site()->isRubrique($vv)):?>
                 <div class="type">
                     c'est une
-                    <span style="color:<?=site()->getPageColor($vv)?>">
+                    <span style="color:<?=site()->getPageTheme($vv)?>">
                         Rubrique
                     </span>
                 </div>
             <?else:?>
                 <?if(site()->getRubrique($vv)):?>
                     <div class="type">
-                        Dans <span style="color:<?=site()->getPageColor($vv)?>"><?=site()->getRubrique($vv,true)->name?></span>
+                        Dans <span style="color:<?=site()->getPageTheme($vv)?>"><?=site()->getRubrique($vv,true)->name?></span>
                     </div>
                 <?endif;?>
             <?endif?>
