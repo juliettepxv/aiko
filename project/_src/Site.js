@@ -34,15 +34,21 @@ export default class Site{
             $body.attr("data-page-transition-state","start");
             //stope en attendant que la transition soit finie
             PovHistory.readyToinject=false;
+            NavMenu.close();
+            console.log("a")
+        });
+        $body.on(EVENTS.HISTORY_CHANGE_URL_LOADED,function(){
+            $("#page-transition").attr("theme",PovHistory.currentPageInfo.color);
+            console.log("b",PovHistory.currentPageInfo.color)
             //dit qu'on est prêt à afficher la page (s'assure qu'on reste au moins une seconde sur l'écran de transition)
             setTimeout(function(){
                 PovHistory.readyToinject=true;
-            },500);
-            NavMenu.close();
-        });
+            },1000);
 
+        });
         //changement d'url et HTML injecté
         $body.on(EVENTS.HISTORY_CHANGE_URL_LOADED_INJECTED,function(){
+            console.log("c",PovHistory.currentPageInfo.color)
             $("#page-transition").attr("theme",PovHistory.currentPageInfo.color);
             $body.attr("data-page-transition-state","end");
             me.onDomChange();
