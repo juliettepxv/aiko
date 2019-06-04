@@ -90,5 +90,8 @@ if(!the()->requestUrl->isAjax){
 
         <?=$view->render("components/test-breakpoints")?>
 
+        <div id="page-transition">
+            <div></div>
+        </div>
     </div>
 <?endif?>

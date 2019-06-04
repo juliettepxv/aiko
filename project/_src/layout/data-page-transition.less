@@ -42,6 +42,9 @@
     }
 
   }
+  #page-transition{
+    left: -100vmax;
+  }
 
 }
 
@@ -56,6 +59,22 @@
 
   }
 }
+
+#page-transition{
+  position: fixed;
+  z-index: ( @z-nav - 10 );
+  pointer-events: none;
+  top: 0;
+  transition: all 0.5s;
+  left : 100vmax;
+  width: calc( 200vmax);
+  height: calc( 200vmax);
+  background-color: rgba(0,255 , 0, 0.4);
+  transform: skewX(45deg);
+  transform-origin: top left;
+}
+
+
 
 
 @keyframes kf-to-left {
@@ -130,5 +149,7 @@
     transform: translateY(0px);
   }
 }
+
+
 
 

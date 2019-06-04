@@ -43,6 +43,7 @@ export default class Site{
 
         //changement d'url et HTML injecté
         $body.on(EVENTS.HISTORY_CHANGE_URL_LOADED_INJECTED,function(){
+            $("#page-transition").attr("theme",PovHistory.currentPageInfo.color);
             $body.attr("data-page-transition-state","end");
             me.onDomChange();
             //scroll top
