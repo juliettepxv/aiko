@@ -18,9 +18,8 @@ $menu = \Classiq\Models\Nav::getByName("menu", true);
 <div class="intro">
 
     <div class="logo-animation">
-
-
     </div>
+
     <div class="baseline-rub">
 
         <div class="rub-home">
