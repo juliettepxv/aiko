@@ -1,0 +1,51 @@
+#page-transition{
+  position: fixed;
+  z-index: ( @z-nav - 10 );
+  pointer-events: none;
+  top: 0;
+  transition: all 1s;
+
+  left : 100vmax;
+  [data-page-transition-state="start"] & {
+    left: -100vmax;
+  }
+
+  width: calc( 200vmax);
+  height: calc( 200vmax);
+
+  transform: skewX(45deg);
+  transform-origin: top left;
+
+  //à l'intérieur des dégradés fadent en alpha
+  >*{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--page-color) 0%,var(--page-color2) 50%);
+    transition: opacity 1s;
+    opacity:0;
+
+  }
+  &[theme='orange']{
+    .theme-orange{
+      opacity: 1;
+    }
+  }
+  &[theme='blue']{
+    .theme-blue{
+      opacity: 1;
+    }
+  }
+  &[theme='green']{
+    .theme-green{
+      opacity: 1;
+    }
+  }
+  &[theme='pink']{
+    .theme-pink{
+      opacity: 1;
+    }
+  }
+}
+
+

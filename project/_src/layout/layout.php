@@ -89,12 +89,7 @@ if(!the()->requestUrl->isAjax){
         <div class="webpack-time"></div>
 
         <?=$view->render("components/test-breakpoints")?>
+        <?=$view->render("components/page-transition")?>
 
-        <div id="page-transition">
-            <div class="theme-orange"></div>
-            <div class="theme-blue"></div>
-            <div class="theme-green"></div>
-            <div class="theme-pink"></div>
-        </div>
     </div>
 <?endif?>
