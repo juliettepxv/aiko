@@ -27,7 +27,7 @@
       width: 100%;
       height: 100%;
       color: white;
-      border: 4px solid @color-white;
+text-align: center;
 
     }
 
@@ -63,6 +63,7 @@
       .long{
         opacity: 0;
         position: absolute;
+        width: auto;
       }
 
     }
@@ -71,10 +72,14 @@
     &:hover {
       width: 350px;
       > a {
+        text-align: center;
         .short{
           opacity: 0;
         }
         .long{
+
+          border: 4px solid @color-white;
+          padding: 10px 20px;
           opacity: 1;
         }
       }
