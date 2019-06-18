@@ -7,16 +7,11 @@
 /** @var Filerecord[] $imgs La liste d'image */
 $imgs = $vv->getDataAsRecords("images");
 $options=[
-        "Une image horizontale"=>"one-image",
-        "Une image verticale"=>"one-image vertical",
-];
-if(count($imgs)>1){
-    $o=["Deux images carrées"=>"two-images"];
-    $options=array_merge($options,$o);
+        "horizontale"=>"",
+        "verticale"=>"vertical"
 
-    $o=["Deux images verticales"=>"two-images vertical"];
-    $options=array_merge($options,$o);
-}
+];
+
 ?>
 <label>Images</label>
 <?=$vv->wysiwyg()->field("images")

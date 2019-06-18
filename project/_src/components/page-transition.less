@@ -1,13 +1,19 @@
 #page-transition{
   position: fixed;
-  z-index: ( @z-nav - 10 );
+  //z-index: ( @z-nav - 10 );
   pointer-events: none;
   top: 0;
-  transition: all 1s;
+  right : 200vmax;
+  transition: all 0.5s ease-in-out;
 
-  left : 100vmax;
+
   [data-page-transition-state="start"] & {
-    left: -100vmax;
+    transition: right 0.5s ease-in-out;
+    right: 0vmax;
+  }
+
+  [data-page-transition-state="end"] & {
+    right : 200vmax;
   }
 
   width: calc( 200vmax);
@@ -22,7 +28,7 @@
     width: 100%;
     height: 100%;
     background: linear-gradient(to bottom, var(--page-color) 0%,var(--page-color2) 50%);
-    transition: opacity 1s;
+    transition: opacity 0.5s;
     opacity:0;
 
   }

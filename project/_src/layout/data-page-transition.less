@@ -1,14 +1,14 @@
 [data-page-transition-state] {
   #main-content {
     animation-iteration-count: 1;
-    animation-duration: 0.3s;
+    animation-duration: 0.5s;
     animation-fill-mode: forwards;
-    animation-timing-function: ease-out;
+    animation-timing-function: ease-in-out;
     transform-origin: top;
 
     .angle-degrade {
       animation-iteration-count: 1;
-      animation-duration: 1s;
+      animation-duration: 0.5s;
       animation-fill-mode: forwards;
       animation-timing-function: ease-out;
       transform-origin: top;
@@ -16,7 +16,7 @@
 
     .block-preview-page .block-img, .block-preview-page .wrap-rub {
       animation-iteration-count: 1;
-      animation-duration: 0.2s;
+      animation-duration: 1s;
       animation-fill-mode: forwards;
       animation-timing-function: ease-in;
       transform-origin: top;
@@ -45,11 +45,11 @@
 
 [data-page-transition-state="end"] {
   #main-content {
-  animation-name: kf-from-right;
+    animation-name: kf-from-right;
 
-  .angle-degrade {
-    animation-name:kf-from-bottom;
-  }
+    .angle-degrade {
+      animation-name:kf-from-bottom;
+    }
 
 
   }
@@ -78,7 +78,7 @@
   }
   100% {
 
-   // transform: skewY(0);
+    // transform: skewY(0);
   }
 }
 
@@ -107,7 +107,7 @@
   }
   100% {
 
-      transform: translateY(-200px);
+    transform: translateY(-200px);
   }
 }
 
@@ -125,11 +125,11 @@
 @keyframes kf-from-bottom {
   0% {
     opacity: 0;
-    transform: translateY(-600px);
+    transform: translateX(100vw);
   }
   100% {
 
-    transform: translateY(0px);
+    transform: translateX(0vw);
   }
 }
 

@@ -9,12 +9,18 @@ $invert = $vv->getData("invert") ? "invert" : "";
 $href = "#";
 $cssIsRub = "";
 $isRub = false;
+$cssTheme = "";
+$imgTag="";
 if ($page) {
+
+    $cssTheme = site()->getPageTheme($page);
+
     $href = $page->href();
     /** @var \Classiq\Models\Filerecord $img */
     $img = $page->getValueAsRecord("thumbnailAlt");
     if (!$img) {
         $img = $page->thumbnail(true);
+
     }
     if ($img) {
         $imgTag = $img
@@ -36,7 +42,7 @@ if ($page) {
 ?>
 <? if ($page || cq()->wysiwyg()): ?>
     <a href="<?= $href ?>" <?= $vv->wysiwyg()->openConfigOnCreate()->attr() ?>
-       class="block block-preview-page theme-<?=site()->getPageTheme($page)?> <?= $invert ?> <? if ($isRub): ?>block-preview-rub<? endif; ?>">
+       class="block block-preview-page theme-<?=$cssTheme?> <?= $invert ?> <? if ($isRub): ?>block-preview-rub<? endif; ?>">
 
         <div class="container <?= $cssIsRub ?>">
 
@@ -95,7 +101,7 @@ if ($page) {
                             <div class="block-texte">
 
                                 <h3 class="title">
-                                    <?= $page->getValue("subtitle_" . the()->project->langCode) ?>
+                                    <?= $page->getValue("name_" . the()->project->langCode) ?>
                                 </h3>
 
                                 <div class="txt">

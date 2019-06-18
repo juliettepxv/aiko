@@ -15,7 +15,7 @@ class Site extends AbstractSingleton
     /**
      * @var string clé publique à configurer pour les APIs Google ajavascript (google map par exemple)
      */
-    public $googleApiKey="";
+    public $googleApiKey = "";
     /**
      * @var string clé utilisée par google webmater tools pour vérifier que le site vous appartient
      */
@@ -27,7 +27,7 @@ class Site extends AbstractSingleton
     /**
      * @var string[] liste des blocks possibles
      */
-    public $blocksList=[
+    public $blocksList = [
         "blocks/texte",
         "blocks/titre",
         "blocks/img",
@@ -46,7 +46,8 @@ class Site extends AbstractSingleton
      * @return Page|null
      * @throws \Pov\PovException
      */
-    public function homePage(){
+    public function homePage()
+    {
         return cq()->homePage();
     }
 
@@ -56,18 +57,20 @@ class Site extends AbstractSingleton
      * @param bool $strict si false et qu'il n'y apas de rubrique renverra rien, sinon ce sera la home page
      * @return Page
      */
-    public function getRubrique($vv,$strict=true)
+    public function getRubrique($vv, $strict = true)
     {
-        if($this->isRubrique($vv)){
+        if ($this->isRubrique($vv)) {
             return $vv;
         }
-        /** @var Page $rub */
-        $rub=$vv->getValueAsRecord("vars.rubrique");
-        if($rub && $this->isRubrique($rub)){
-            return $rub;
-        }
-        if($strict){
-            return null;
+        if ($vv) {
+            /** @var Page $rub */
+            $rub = $vv->getValueAsRecord("vars.rubrique");
+            if ($rub && $this->isRubrique($rub)) {
+                return $rub;
+            }
+            if ($strict) {
+                return null;
+            }
         }
         return $this->homePage();
     }
@@ -77,8 +80,11 @@ class Site extends AbstractSingleton
      * @param Page $vv
      * @return bool
      */
-    public function isRubrique($vv){
-        return $vv->page_type==="rubrique";
+    public function isRubrique($vv)
+    {
+        if ($vv) {
+            return $vv->page_type === "rubrique";
+        }
     }
 
     /**
@@ -86,8 +92,9 @@ class Site extends AbstractSingleton
      * @param Page $vv
      * @return string
      */
-    public function getPageTheme($vv){
-        $rub=$this->getRubrique($vv,false);
+    public function getPageTheme($vv)
+    {
+        $rub = $this->getRubrique($vv, false);
         return $rub->getValue("vars.theme");
     }
 

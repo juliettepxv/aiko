@@ -16,8 +16,10 @@ $image1 = null;
 $image2 = null;
 
 /** @var string $style une ou deux images ? */
-$style = $vv->getData("style", "one-image");
+$style = $vv->getData("style", "");
+$o = "";
 
+/*
 switch ($style) {
     case "one-image":
         $s = "one-image";
@@ -37,15 +39,22 @@ switch ($style) {
         break;
 }
 
-
 if ($s === "two-images" && count($imgs) < 2) {
     //si il n'y a qu'une seule image...
     $style = "one-image";
+    $s = "one-image";
 }
+*/
+
+if (count($imgs) > 1) {
+    //si il y a deux images ...
+    $o = "two-images";
+}
+
 
 if ($imgs) {
     $image1 = array_shift($imgs);
-    if ($style === "two-images") {
+    if ($o === "two-images") {
         $image2 = array_shift($imgs);
     }
 }
@@ -54,44 +63,43 @@ if ($imgs) {
 
 <div <?= $vv->wysiwyg()->openConfigOnCreate()->attr() ?> class="block block-img py-medium">
     <div class="container">
-        <?if(!$image1):?>
-        Choisissez au moins une image
-        <?else:?>
-        <div class="row">
-            <div class="col-12 col-lg-12 is-images">
-                <div data-aos="floating" class="row cadre <?= $imgs ? "multiple" : "" ?>">
-                    <? if ($s == "two-images"): ?>
-                        <div class="col-6 img-wrap"
-                             data-zoom-img="<?= $image1->image()->sizeMax(1600, 1600)->jpg()->href() ?>">
-                            <? if ($o === "vertical"): ?>
-                                <?= $image1->image()->sizeCover(600, 800)
-                                    ->jpg()
-                                    ->htmlTag()
-                                    ->addClass("img-responsive") ?>
-                            <? else: ?>
-                                <?= $image1->image()->sizeCover(600, 600)
-                                    ->jpg()
-                                    ->htmlTag()
-                                    ->addClass("img-responsive") ?>
-                            <? endif; ?>
-                        </div>
-                        <div class="col-6 img-wrap"
-                             data-zoom-img="<?= $image2->image()->sizeMax(1600, 1600)->jpg()->href() ?>">
-                            <? if ($o === "vertical"): ?>
-                                <?= $image2->image()->sizeCover(600, 800)
-                                    ->jpg()
-                                    ->htmlTag()
-                                    ->addClass("img-responsive") ?>
-                            <? else: ?>
-                                <?= $image2->image()->sizeCover(600, 600)
-                                    ->jpg()
-                                    ->htmlTag()
-                                    ->addClass("img-responsive") ?>
-                            <? endif; ?>
-                        </div>
-                    <? else: ?>
-                        <? if ($s === "one-image"): ?>
-                            <? if ($o === "vertical"): ?>
+        <? if (!$image1): ?>
+            Choisissez au moins une image
+        <? else: ?>
+            <div class="row">
+                <div class="col-12 col-lg-12 is-images">
+                    <div data-aos="floating" class="row cadre <?= $imgs ? "multiple" : "" ?>">
+                        <? if ($o === "two-images"): ?>
+                            <div class="col-6 img-wrap"
+                                 data-zoom-img="<?= $image1->image()->sizeMax(1600, 1600)->jpg()->href() ?>">
+                                <? if ($style === "vertical"): ?>
+                                    <?= $image1->image()->sizeCover(600, 800)
+                                        ->jpg()
+                                        ->htmlTag()
+                                        ->addClass("img-responsive") ?>
+                                <? else: ?>
+                                    <?= $image1->image()->sizeCover(600, 600)
+                                        ->jpg()
+                                        ->htmlTag()
+                                        ->addClass("img-responsive") ?>
+                                <? endif; ?>
+                            </div>
+                            <div class="col-6 img-wrap" data-zoom-img="<?= $image2->image()->sizeMax(1600, 1600)->jpg()->href() ?>">
+                                <? if ($style === "vertical"): ?>
+                                    <?= $image2->image()->sizeCover(600, 800)
+                                        ->jpg()
+                                        ->htmlTag()
+                                        ->addClass("img-responsive") ?>
+                                <? else: ?>
+                                    <?= $image2->image()->sizeCover(600, 600)
+                                        ->jpg()
+                                        ->htmlTag()
+                                        ->addClass("img-responsive") ?>
+                                <? endif; ?>
+                            </div>
+                        <? else: ?>
+
+                            <? if ($style === "vertical"): ?>
                                 <div class="col-6 offset-sm-3 img-wrap"
                                      data-zoom-img="<?= $image1->image()->sizeMax(1600, 1600)->jpg()->href() ?>">
                                     <?= $image1->image()->height(800)
@@ -108,13 +116,13 @@ if ($imgs) {
                                         ->addClass("img-responsive") ?>
                                 </div>
                             <? endif; ?>
-                        <? endif; ?>
-                    <? endif ?>
-                </div>
-            </div>
 
-        </div>
-        <?endif?>
+                        <? endif ?>
+                    </div>
+                </div>
+
+            </div>
+        <? endif ?>
 
     </div>
 
