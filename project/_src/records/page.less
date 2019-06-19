@@ -17,22 +17,23 @@
 
   .page-header {
     position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    @media (min-width: @screen-sm) {
-      justify-content: center;
-    }
-    flex-wrap: wrap;
     padding: 100px var(--spacing-medium) 0 var(--spacing-medium);
+    text-align: left;
 
+    @media (min-width: @screen-sm) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
 
     .block-img {
       top: 80px;
-      right: -30px;
+      right: 10%;
       position: absolute;
+
       @media (min-width: @screen-xs) {
-        right: 30px;
+        right: 20%;
       }
 
       @media (min-width: @screen-sm) {
@@ -47,14 +48,14 @@
       }
 
       img {
-        max-width: 200px;
+        max-width: 150px;
 
         @media (min-width: @screen-xs) {
-          max-width: 230px;
+          max-width: 170px;
         }
 
         @media (min-width: @screen-sm) {
-          max-width: 300px;
+          max-width: 230px;
         }
         @media (min-width: @screen-xl) {
           max-width: 400px;
@@ -73,6 +74,7 @@
       }
 
       .rub {
+
         margin: 0 var(--spacing-big) 0 0;
       }
 
@@ -82,8 +84,6 @@
     .wrap-text {
       display: flex;
       flex-direction: column;
-      margin-top: var(--spacing-big);
-      margin-bottom: var(--spacing-big);
 
     }
 

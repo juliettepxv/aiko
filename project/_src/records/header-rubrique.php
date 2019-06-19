@@ -20,7 +20,7 @@ use Classiq\Models\Page;
 
 </div>
 <? if ($vv->thumbnail): ?>
-    <div class="block-img">
+    <div class="block-img" data-aos="floating">
         <div class="img-wrap">
             <?= $vv->thumbnail()
                 ->width(800)
@@ -40,7 +40,7 @@ use Classiq\Models\Page;
 
 
 
-<div class="wrap-text">
+<div class="wrap-text mt-small mb-big">
     <?= $vv->wysiwyg()
         ->field("vars.texte_lang")
         ->string(\Pov\Utils\StringUtils::FORMAT_HTML)

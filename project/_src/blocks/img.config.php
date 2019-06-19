@@ -6,10 +6,15 @@
  */
 /** @var Filerecord[] $imgs La liste d'image */
 $imgs = $vv->getDataAsRecords("images");
-$options=[
-        "horizontale"=>"",
-        "verticale"=>"vertical"
 
+$orientation=[
+        "horizontale"=>"horizontal",
+        "verticale"=>"vertical"
+];
+
+$style=[
+    "une image"=>"one-image",
+    "deux images"=>"two-images"
 ];
 
 ?>
@@ -23,28 +28,18 @@ $options=[
         ->render()
 ?>
 
+<label>Orientation</label>
+<?=$vv->wysiwyg()
+    ->field("orientation")
+    ->string()
+    ->onSavedRefreshListItem($vv)
+    ->select($orientation)
+?>
+
 <label>Style</label>
 <?=$vv->wysiwyg()
     ->field("style")
     ->string()
     ->onSavedRefreshListItem($vv)
-    ->select($options)
+    ->select($style)
 ?>
-<?/*
-<label>Orientation?</label>
-<?=$vv->wysiwyg()
-    ->field("orientation")
-    ->bool()
-    ->onSavedRefreshListItem($vv)
-    ->checkbox("Vertical")
-?>
-<?if($vv->getData("texte")):?>
-    <?=$vv->wysiwyg()
-        ->field("invert")
-        ->bool()
-        ->onSavedRefreshListItem($vv)
-        ->checkbox("inverser la mise en page")
-    ?>
-<?endif;?>
-*/?>
-

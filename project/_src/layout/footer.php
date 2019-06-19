@@ -6,7 +6,7 @@ use Pov\Utils\StringUtils; ?>
 <footer id="footer">
     <div class="container py-big">
 
-        <div class="encart-titre mb-big">
+        <div class="encart-titre mb-medium">
             Emotion design Group
         </div>
 
@@ -23,28 +23,24 @@ use Pov\Utils\StringUtils; ?>
         ?>
 
 
-        <div class="row">
 
-            <div class="col-md-12 col-lg-4 wrap-contact">
+
+            <div class="wrap-contact">
                 <?= site()->homePage()->wysiwyg()
                     ->field("vars.contact")
                     ->string(StringUtils::FORMAT_HTML)
                     ->htmlTag("address") ?>
             </div>
 
+            <div class="wrap-legal">
+                <?= site()->homePage()->wysiwyg()
+                    ->field("vars.legals")
+                    ->string(StringUtils::FORMAT_HTML)
+                    ->htmlTag("div")
+                   ?>
+            </div>
 
-            <? foreach (["footer1", "footer2"] as $name): ?>
-                <div class="col-md-6 col-lg-4 wrap-link">
-                    <?= site()->homePage()->wysiwyg()
-                        ->field("vars.$name")
-                        ->listJson(["layout/item"])
-                        ->contextMenuSize(SIZE_SMALL)
-                        ->onlyRecords("page")
-                        ->htmlTag("ul")
-                        ->addClass("link") ?>
-                </div>
-            <? endforeach; ?>
-        </div>
+
 
     </div>
 

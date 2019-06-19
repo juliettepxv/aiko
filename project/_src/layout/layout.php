@@ -34,7 +34,7 @@ if(!the()->requestUrl->isAjax){
     }
     the()->htmlLayout()->layoutVars->googleAnalyticsId=site()->googleAnalyticsId;
     the()->htmlLayout()->hreflang=the()->project->langCode;
-    the()->htmlLayout()->favicon->favicon=the()->fileSystem->filesystemToHttp("project/logo.png");
+    the()->htmlLayout()->favicon->favicon=the()->fileSystem->filesystemToHttp("project/img/favicon.png");
     the()->htmlLayout()->addJavascriptTranslations();
 
     //manifest

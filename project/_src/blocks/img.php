@@ -15,46 +15,21 @@ $image1 = null;
 /** @var Filerecord $image2 La deuxième image */
 $image2 = null;
 
+/** @var string $orientation horizontale ou verticale ? */
+$orientation = $vv->getData("orientation", "");
+
 /** @var string $style une ou deux images ? */
 $style = $vv->getData("style", "");
-$o = "";
 
-/*
-switch ($style) {
-    case "one-image":
-        $s = "one-image";
-        $o = "";
-        break;
-    case "one-image vertical":
-        $s = "one-image";
-        $o = "vertical";
-        break;
-    case "two-images":
-        $s = "two-images";
-        $o = "";
-        break;
-    case "two-images vertical":
-        $s = "two-images";
-        $o = "vertical";
-        break;
-}
-
-if ($s === "two-images" && count($imgs) < 2) {
-    //si il n'y a qu'une seule image...
+if (count($imgs) < 2) {
+    //si il y a une image ...
     $style = "one-image";
-    $s = "one-image";
-}
-*/
-
-if (count($imgs) > 1) {
-    //si il y a deux images ...
-    $o = "two-images";
 }
 
 
 if ($imgs) {
     $image1 = array_shift($imgs);
-    if ($o === "two-images") {
+    if ($style === "two-images") {
         $image2 = array_shift($imgs);
     }
 }
@@ -69,10 +44,10 @@ if ($imgs) {
             <div class="row">
                 <div class="col-12 col-lg-12 is-images">
                     <div data-aos="floating" class="row cadre <?= $imgs ? "multiple" : "" ?>">
-                        <? if ($o === "two-images"): ?>
+                        <? if ($style === "two-images"): ?>
                             <div class="col-6 img-wrap"
                                  data-zoom-img="<?= $image1->image()->sizeMax(1600, 1600)->jpg()->href() ?>">
-                                <? if ($style === "vertical"): ?>
+                                <? if ($orientation === "vertical"): ?>
                                     <?= $image1->image()->sizeCover(600, 800)
                                         ->jpg()
                                         ->htmlTag()
@@ -85,7 +60,7 @@ if ($imgs) {
                                 <? endif; ?>
                             </div>
                             <div class="col-6 img-wrap" data-zoom-img="<?= $image2->image()->sizeMax(1600, 1600)->jpg()->href() ?>">
-                                <? if ($style === "vertical"): ?>
+                                <? if ($orientation === "vertical"): ?>
                                     <?= $image2->image()->sizeCover(600, 800)
                                         ->jpg()
                                         ->htmlTag()
@@ -99,7 +74,7 @@ if ($imgs) {
                             </div>
                         <? else: ?>
 
-                            <? if ($style === "vertical"): ?>
+                            <? if ($orientation === "vertical"): ?>
                                 <div class="col-6 offset-sm-3 img-wrap"
                                      data-zoom-img="<?= $image1->image()->sizeMax(1600, 1600)->jpg()->href() ?>">
                                     <?= $image1->image()->height(800)
