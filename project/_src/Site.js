@@ -10,6 +10,7 @@ export default class Site{
         me.resizeStage();
         me.onDomChange();
         Site.navActive();
+
     }
 
     /**
@@ -35,7 +36,7 @@ export default class Site{
             //stope en attendant que la transition soit finie
             PovHistory.readyToinject=false;
             NavMenu.close();
-            console.log("a")
+           // console.log("a")
         });
         $body.on(EVENTS.HISTORY_CHANGE_URL_LOADED,function(){
             $("#page-transition").attr("theme",PovHistory.currentPageInfo.color);

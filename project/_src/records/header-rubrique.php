@@ -4,7 +4,7 @@ use Classiq\Models\Page;
 
 ?>
 
-<div class="wrap-rub">
+<div class="wrap-rub mr-big">
     <?=$view->render("components/rub",$vv)?>
     <div class="pt-medium ">
     <?= $vv->wysiwyg()
@@ -40,7 +40,7 @@ use Classiq\Models\Page;
 
 
 
-<div class="wrap-text mt-small mb-big">
+<div class="wrap-text my-big">
     <?= $vv->wysiwyg()
         ->field("vars.texte_lang")
         ->string(\Pov\Utils\StringUtils::FORMAT_HTML)

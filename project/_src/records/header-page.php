@@ -22,7 +22,7 @@ use Classiq\Models\Page;
                 ->htmlTag("span")
             ?>
         </h1>
-        <div class="text-left mt-big mb-small">
+        <div class="mt-big mb-small">
             <?= $vv->wysiwyg()
                 ->field("vars.title_lang")
                 ->string(\Pov\Utils\StringUtils::FORMAT_HTML)
@@ -34,7 +34,7 @@ use Classiq\Models\Page;
         </div>
 
     </div>
-    <div class="wrap-text mb-big">
+    <div class="wrap-text my-big">
         <?= $vv->wysiwyg()
             ->field("vars.texte_lang")
             ->string(\Pov\Utils\StringUtils::FORMAT_HTML)

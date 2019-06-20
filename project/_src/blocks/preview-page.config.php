@@ -14,6 +14,8 @@ $page = $vv->targetUid(true);
 ->buttonRecord()
 ->render()
 ?>
+
+
 <?if($page):?>
 
     <label>Image de preview</label>
