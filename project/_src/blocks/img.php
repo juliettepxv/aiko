@@ -47,6 +47,15 @@ if ($imgs) {
                         <? if ($style === "two-images"): ?>
                             <div class="col-6 img-wrap"
                                  data-zoom-img="<?= $image1->image()->sizeMax(1600, 1600)->jpg()->href() ?>">
+                                <div class="wrap-zoom">
+                                    <div class="zoom-ico">
+                                        <svg>
+                                            <use xlink:href="#startup-zoom"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+
+
                                 <? if ($orientation === "vertical"): ?>
                                     <?= $image1->image()->sizeCover(600, 800)
                                         ->jpg()
@@ -59,7 +68,15 @@ if ($imgs) {
                                         ->addClass("img-responsive") ?>
                                 <? endif; ?>
                             </div>
-                            <div class="col-6 img-wrap" data-zoom-img="<?= $image2->image()->sizeMax(1600, 1600)->jpg()->href() ?>">
+                            <div class="col-6 img-wrap"
+                                 data-zoom-img="<?= $image2->image()->sizeMax(1600, 1600)->jpg()->href() ?>">
+                                <div class="wrap-zoom">
+                                    <div class="zoom-ico">
+                                        <svg>
+                                            <use xlink:href="#startup-zoom"></use>
+                                        </svg>
+                                    </div>
+                                </div>
                                 <? if ($orientation === "vertical"): ?>
                                     <?= $image2->image()->sizeCover(600, 800)
                                         ->jpg()
@@ -74,9 +91,18 @@ if ($imgs) {
                             </div>
                         <? else: ?>
 
+
                             <? if ($orientation === "vertical"): ?>
                                 <div class="col-6 offset-sm-3 img-wrap"
                                      data-zoom-img="<?= $image1->image()->sizeMax(1600, 1600)->jpg()->href() ?>">
+                                    <div class="wrap-zoom">
+                                        <div class="zoom-ico">
+                                            <svg>
+                                                <use xlink:href="#startup-zoom"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+
                                     <?= $image1->image()->height(800)
                                         ->jpg()
                                         ->htmlTag()
@@ -85,6 +111,13 @@ if ($imgs) {
                             <? else: ?>
                                 <div class="col-12  img-wrap"
                                      data-zoom-img="<?= $image1->image()->sizeMax(1600, 1600)->jpg()->href() ?>">
+                                    <div class="wrap-zoom">
+                                        <div class="zoom-ico">
+                                            <svg>
+                                                <use xlink:href="#startup-zoom"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
                                     <?= $image1->image()->sizeCover(1200, 600)
                                         ->jpg()
                                         ->htmlTag()
