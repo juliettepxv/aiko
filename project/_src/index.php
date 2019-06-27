@@ -11,18 +11,15 @@ $menu = \Classiq\Models\Nav::getByName("menu", true);
 
 <div class="homepage">
 
-
+    <?= $view->render("components/angle-home", $vv) ?>
 
     <div class="intro">
 
         <div class="logo-animation">
-            <?/*= $view->render("components/angle-home", $vv) */?>
+
             <div class="block block-video">
-                <div class="">
-                    <div class="">
-                        <video autoplay='autoplay' muted='muted' loop='loop'  src="<?=the()->fileSystem->filesystemToHttp("project/img/vdo-anim.mp4");?>"></video>
-                    </div>
-                </div>
+                <video autoplay='autoplay' muted='muted' loop='loop'
+                       src="<?= the()->fileSystem->filesystemToHttp("project/img/vdo-anim.mp4"); ?>"></video>
             </div>
 
         </div>
@@ -39,21 +36,26 @@ $menu = \Classiq\Models\Nav::getByName("menu", true);
                 <? endforeach; ?>
             </div>
 
-            <? /*
-        <div class="baseline container">
-            <div class="wrap-text">
-                <div class="text">
-                    <h3> Créateur de mondes virtuels</h3>
+
+            <div data-aos="floating" class="baseline container">
+                <div class="wrap-text">
+                    <div class="text">
+                        <h3> Créateur de mondes virtuels</h3>
+                    </div>
+                </div>
+
+                <div class="tiret">
+                    <?= pov()->svg->use("startup-tiret-h") ?>
                 </div>
             </div>
 
-            <div class="tiret">
-                <?= pov()->svg->use("startup-tiret-h") ?>
-            </div>
         </div>
-*/ ?>
 
+
+        <div class="fleche">
+            <?= pov()->svg->use("startup-arrow-down") ?>
         </div>
+
     </div>
 
 

@@ -1,25 +1,26 @@
-.angle-degrade {
+.angle-home {
   //transform: scaleX(-1);
   position: absolute;
+  left: -200px;
 }
 
 .intro {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 80vh;
+  justify-content: center;
+  height: 100vh;
  // outline: 1px solid red;
   outline-offset: -10px;
 
  .logo-animation{
-    margin-top: -20vh;
+
   }
 
-  /*
+
   .baseline-rub{
 
     .baseline{
-      outline: 1px solid red;
       display: flex;
       margin: var(--spacing-medium) 0 0 var(--spacing-medium);
       .wrap-text {
@@ -50,6 +51,35 @@
       }
     }
 
+
+    &:hover {
+      .baseline .wrap-text .text h3 {
+        top:50px;
+      }
+      .baseline .tiret >svg  {
+        left: -300px;
+      }
+    }
+
+
+  }
+
+
+
+
+
+  .fleche {
+    animation-name: kf-top-bottom;
+    animation-iteration-count: infinite;
+    animation-duration: 1s;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+
+    svg{
+      width: 26px;
+      height: 60px;
+    }
   }
 
 
@@ -57,16 +87,12 @@
 
 
 
+}
 
 
-  &:hover {
-    .baseline-rub .baseline .wrap-text .text h3 {
-      top:50px;
-    }
-    .baseline-rub .baseline .tiret >svg  {
-      left: -300px;
-    }
+
+@keyframes kf-top-bottom {
+  to {
+    transform: translateY(30px);
   }
-  */
-
 }
