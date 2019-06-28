@@ -5,6 +5,8 @@ use Classiq\Models\Page;
 
 $view->inside("layout/layout", $vv);
 
+the()->htmlLayout()->pageInfo->isHome=true;
+
 /** @var \Classiq\Models\Nav $menu */
 $menu = \Classiq\Models\Nav::getByName("menu", true);
 ?>
@@ -19,7 +21,7 @@ $menu = \Classiq\Models\Nav::getByName("menu", true);
 
             <div class="block block-video">
                 <video autoplay='autoplay' muted='muted' loop='loop'
-                       src="<?= the()->fileSystem->filesystemToHttp("project/img/vdo-anim2.mp4"); ?>"></video>
+                       src="<?= the()->fileSystem->filesystemToHttp("project/img/vdo-anim5.mp4"); ?>"></video>
             </div>
 
         </div>

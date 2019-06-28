@@ -50,6 +50,7 @@ export default class Site{
         //changement d'url et HTML injecté
         $body.on(EVENTS.HISTORY_CHANGE_URL_LOADED_INJECTED,function(){
             console.log("c",PovHistory.currentPageInfo.color)
+
             $("#page-transition").attr("theme",PovHistory.currentPageInfo.color);
             $body.attr("data-page-transition-state","end");
             me.onDomChange();
@@ -77,6 +78,9 @@ export default class Site{
             me.onDomChange();
         });
 
+
+
+
     }
 
     /**
@@ -84,7 +88,11 @@ export default class Site{
      */
     static navActive(){
         NavMenu.setActivePage();
-
+        if(PovHistory.currentPageInfo.isHome){
+            $body.addClass("is-home");
+        }else{
+            $body.removeClass("is-home");
+        }
 
     }
 

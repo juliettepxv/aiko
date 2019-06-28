@@ -10,22 +10,37 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
- // outline: 1px solid red;
+
+  // outline: 1px solid red;
   outline-offset: -10px;
 
- .logo-animation{
+  .logo-animation {
+    video {
+        width: 100vw;
 
+      @media (min-width: @screen-xl) {
+        width: inherit;
+      }
+    }
   }
 
 
-  .baseline-rub{
+  .baseline-rub {
+    width: 100vw;
 
-    .baseline{
+
+    @media (min-width: @screen-xl) {
+      width: inherit;
+    }
+
+    .baseline {
       display: flex;
       margin: var(--spacing-medium) 0 0 var(--spacing-medium);
+
       .wrap-text {
         .text {
           overflow: hidden;
+
           h3 {
             position: relative;
             top: 0px;
@@ -33,15 +48,16 @@
           }
         }
       }
+
       .tiret {
         position: relative;
-        top:-65px;
+        top: -65px;
         left: 25px;
         overflow: hidden;
         transform: skewX(45deg);
 
 
-        >svg  {
+        > svg {
           color: @color-dark3;
           transform: skewX(-45deg);
           position: relative;
@@ -54,18 +70,16 @@
 
     &:hover {
       .baseline .wrap-text .text h3 {
-        top:50px;
+        top: 50px;
       }
-      .baseline .tiret >svg  {
+
+      .baseline .tiret > svg {
         left: -300px;
       }
     }
 
 
   }
-
-
-
 
 
   .fleche {
@@ -76,19 +90,14 @@
     animation-timing-function: ease-in-out;
     animation-fill-mode: forwards;
 
-    svg{
+    svg {
       width: 26px;
       height: 60px;
     }
   }
 
 
-
-
-
-
 }
-
 
 
 @keyframes kf-top-bottom {
