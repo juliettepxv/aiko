@@ -20,6 +20,8 @@
 
       @media (min-width: @screen-xl) {
         width: inherit;
+        height: 60vh;
+        max-height: 600px;
       }
     }
   }
@@ -31,6 +33,7 @@
 
     @media (min-width: @screen-xl) {
       width: inherit;
+      height: 40vh;
     }
 
     .baseline {
@@ -55,7 +58,6 @@
         left: 25px;
         overflow: hidden;
         transform: skewX(45deg);
-
 
         > svg {
           color: @color-dark3;
@@ -83,6 +85,12 @@
 
 
   .fleche {
+
+    position: absolute;
+    bottom:30px;
+
+
+
     animation-name: kf-top-bottom;
     animation-iteration-count: infinite;
     animation-duration: 1s;

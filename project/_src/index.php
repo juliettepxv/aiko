@@ -5,7 +5,7 @@ use Classiq\Models\Page;
 
 $view->inside("layout/layout", $vv);
 
-the()->htmlLayout()->pageInfo->isHome=true;
+the()->htmlLayout()->pageInfo->isHome = true;
 
 /** @var \Classiq\Models\Nav $menu */
 $menu = \Classiq\Models\Nav::getByName("menu", true);
@@ -66,3 +66,5 @@ $menu = \Classiq\Models\Nav::getByName("menu", true);
         ->htmlTag()
         ->addClass("blocks");
     ?>
+
+</div>
