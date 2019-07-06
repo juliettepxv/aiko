@@ -18,7 +18,7 @@ the()->project->config_translations_debug=true; //quand true recharge à chaque 
 //site()->googleApiKey="xxxxx";
 
 //Google webmaster tools
-//site()->googleSiteVerification="xxxxx";
+the()->htmlLayout()->googleSiteVerification="WHf2o7lr7D-5e0te43zwwx9wNnutozMXyh7hoR355L0";
 
 //Google analytics
-//site()->googleAnalyticsId="UA-xxxxxx";
+site()->googleAnalyticsId="UA-143383281-1";
