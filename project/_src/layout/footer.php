@@ -11,6 +11,14 @@ use Pov\Utils\StringUtils; ?>
         </div>
 
 
+        <div class="wrap-contact">
+            <?= site()->homePage()->wysiwyg()
+                ->field("vars.baseline")
+                ->string(StringUtils::FORMAT_HTML)
+                ->htmlTag("address") ?>
+        </div>
+
+
         <?= site()->homePage()->wysiwyg()->field("vars.logos")
             ->listJson("blocks/block-logos/logos/logo-link-item")
             ->horizontal()
@@ -21,7 +29,7 @@ use Pov\Utils\StringUtils; ?>
             ->htmlTag("div")
             ->addClass("wrap-logos row")
         ?>
-
+        
 
 
 
