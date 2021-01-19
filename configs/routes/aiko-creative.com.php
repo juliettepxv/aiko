@@ -1,4 +1,7 @@
 <?php
+
+header('Location: https://aiko-creative.fr');
+die();
 the()->fmkHttpRoot="";// /github/classiq-startup
 the()->configProjectUrl=new \Pov\Configs\ProjectUrl("aiko-creative.com"); // localhost/github/classiq-startup/fr
 the()->fileSystem=new \Pov\Configs\FileSystem("project");
@@ -7,3 +10,4 @@ the()->boot->loadProject("project");
 the()->project->langCode="en";
 
 include (__DIR__."/shared-prod.php");
+the()->configProjectUrl->forceHttps=false;
